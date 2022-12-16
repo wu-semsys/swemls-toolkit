@@ -1,4 +1,4 @@
-# SWeMLS-KG Toolkit
+# SWeMLS Toolkit
 
 This small app allows you to enhance and validate your SWeMLS-KG data according to workflow definitions. 
 More specifically, we uses the reference implementation of [SHACL Engine](https://github.com/TopQuadrant/shacl) to    
@@ -7,7 +7,7 @@ More specifically, we uses the reference implementation of [SHACL Engine](https:
 
 Both SHACL-AF rules and SHACL constraints are available in folder (`input/patterns`).   
 
-SWeMLS-KG toolkit is part of the resources available for our ESWC 2023 submission entitled "_Describing and Organizing Semantic Web and Machine Learning Systems in the SWeMLS-KG_".
+SWeMLS toolkit is part of the resources available for our ESWC 2023 submission entitled "_Describing and Organizing Semantic Web and Machine Learning Systems in the SWeMLS-KG_".
 
 ## Instructions
 
