@@ -1,0 +1,47 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+## Workflow Template
+
+res:Pattern.T16 a opmw:WorkflowTemplate ;
+	rdfs:label "T16";
+	skos:altLabel "OB-29" ;
+	rdfs:comment "[{sym / data} -> ML -> data -> ML -> data]"
+.
+res:Pattern.T16.ML1 a :WorkflowTemplateProcessML ;
+	opmw:isStepOfTemplate res:Pattern.T16 ;
+	opmw:uses res:Pattern.T16.Data1 , res:Pattern.T16.SW1 ;
+.
+res:Pattern.T16.ML2 a :WorkflowTemplateProcessML ;
+	p-plan:isPreceededBy res:Pattern.T16.ML1 ;
+	opmw:isStepOfTemplate res:Pattern.T16 ;
+	opmw:uses res:Pattern.T16.Data2 ;
+.
+res:Pattern.T16.SW1 a :TemplateArtifactSW ;
+	opmw:isVariableOfTemplate res:Pattern.T16 ;
+.
+res:Pattern.T16.Data1 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.T16 ;
+.
+res:Pattern.T16.Data2 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.T16 ;
+	opmw:isGeneratedBy res:Pattern.T16.ML1 ;
+.
+res:Pattern.T16.Data3 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.T16 ;
+	opmw:isGeneratedBy res:Pattern.T16.ML2 ;
+.
+

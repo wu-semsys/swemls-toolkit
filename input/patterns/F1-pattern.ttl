@@ -1,0 +1,36 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+## Workflow Template
+res:Pattern.F1 a opmw:WorkflowTemplate ;
+	rdfs:label "F1";
+	skos:altLabel "FvH-12" ;
+	rdfs:comment "[data/sym -> ML -> data]"
+.
+res:Pattern.F1.ML1 a :WorkflowTemplateProcessML ;
+	opmw:isStepOfTemplate res:Pattern.F1 ;
+	opmw:uses res:Pattern.F1.SW1, res:Pattern.F1.Data1 ;
+.
+res:Pattern.F1.Data1 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.F1 ;
+.
+res:Pattern.F1.Data2 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.F1 ;
+	opmw:isGeneratedBy res:Pattern.F1.ML1 ;
+.
+res:Pattern.F1.SW1 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.F1 ;
+.

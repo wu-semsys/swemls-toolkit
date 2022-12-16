@@ -1,0 +1,17 @@
+@base <https://w3id.org/semsys/ns/swemls/> .
+@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+res:ProcessingEngine.CompoundKR_1 a :ProcessingEngine,
+    :AndCompound;
+  :hasCompoundElement res:ProcessingEngine.SPARQL_Query_Engine, res:ProcessingEngine.Validation, res:ProcessingEngine.Reasoner .
+
+res:ProcessingEngine.CompoundKR_2 a :ProcessingEngine,
+    :AndCompound;
+  :hasCompoundElement res:ProcessingEngine.SPARQL_Query_Engine, res:ProcessingEngine.Fuzzy_Reasoner .
+
+res:ProcessingEngine.Fuzzy_Reasoner a :ProcessingEngine ;
+    rdfs:label "Fuzzy Reasoner" .

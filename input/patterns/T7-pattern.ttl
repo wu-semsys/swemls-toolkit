@@ -1,0 +1,61 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+## Workflow Template
+
+res:Pattern.T7 a opmw:WorkflowTemplate ;
+	rdfs:label "T7";
+	skos:altLabel "OB-44" ;
+	rdfs:comment "[{{sym/data -> ML -> data}/sym -> ML -> sym}/sym -> KR -> data]"
+.
+res:Pattern.T7.ML1 a :WorkflowTemplateProcessML ;
+	opmw:isStepOfTemplate res:Pattern.T7 ;
+	opmw:uses res:Pattern.T7.Data1 , res:Pattern.T7.SW1 ;
+.
+res:Pattern.T7.ML2 a :WorkflowTemplateProcessML ;
+	opmw:isStepOfTemplate res:Pattern.T7 ;
+	opmw:uses res:Pattern.T7.Data2, res:Pattern.T7.SW2 ;
+.
+res:Pattern.T7.KR1 a :WorkflowTemplateProcessML ;
+	p-plan:isPreceededBy res:Pattern.T7.ML1 ;
+	opmw:isStepOfTemplate res:Pattern.T7 ;
+	opmw:uses res:Pattern.T7.SW3 , res:Pattern.T7.SW4 ;
+.
+res:Pattern.T7.SW1 a :TemplateArtifactSW ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+	opmw:isGeneratedBy res:Pattern.T7.ML1 ;
+.
+res:Pattern.T7.SW2 a :TemplateArtifactSW ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+.
+res:Pattern.T7.SW3 a :TemplateArtifactSW ;
+	opmw:isGeneratedBy res:Pattern.T7.ML2 ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+.
+res:Pattern.T7.SW4 a :TemplateArtifactSW ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+.
+res:Pattern.T7.Data1 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+.
+res:Pattern.T7.Data2 a :TemplateArtifactData ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+	opmw:isGeneratedBy res:Pattern.T7.ML1 ;
+.
+res:Pattern.T7.Data3 a :TemplateArtifactData ;
+	opmw:isGeneratedBy res:Pattern.T7.KR1 ;
+	opmw:isVariableOfTemplate res:Pattern.T7 ;
+.

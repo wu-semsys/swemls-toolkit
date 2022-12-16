@@ -1,0 +1,579 @@
+@base <https://w3id.org/semsys/ns/swemls/> .
+@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+res:Resource.or_SW_d66d5ade-d027-4214-a37e-b5627a5d3e11 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.MUTAG, res:Resource.AIFB, res:Resource.AM, res:Resource.BGS .
+
+res:Resource.MUTAG a :SemanticWebResource .
+
+res:Resource.AIFB a :SemanticWebResource .
+
+res:Resource.AM a :SemanticWebResource .
+
+res:Resource.BGS a :SemanticWebResource .
+
+res:Resource.or_SW_a2fc66b3-7882-43a3-907e-2b22cc159f41 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.Alibaba_Taobaos_dataset .
+
+res:Resource.FB15k_237 a :SemanticWebResource .
+
+res:Resource.Alibaba_Taobaos_dataset a :SemanticWebResource .
+
+res:Resource.and_SW_2086afea-fbf3-4060-a941-e78c4d86a938 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Microsoft_Academic_Graph, res:Resource.AMiner .
+
+res:Resource.Microsoft_Academic_Graph a :SemanticWebResource .
+
+res:Resource.AMiner a :SemanticWebResource .
+
+res:Resource.or_SW_e41be9e2-4a56-4ffc-a995-28dde43d9a0e a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.and_SW_208022fe-a6ce-4b5c-8c80-46fd10cddeb7,
+    res:Resource.and_SW_6be5e91d-dda4-4737-afb8-51a155ae9956 .
+
+res:Resource.DBpedia a :SemanticWebResource .
+
+res:Resource.and_SW_208022fe-a6ce-4b5c-8c80-46fd10cddeb7 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Wikidata .
+
+res:Resource.and_SW_6be5e91d-dda4-4737-afb8-51a155ae9956 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.YAGO .
+
+res:Resource.and_SW_4230e234-7c86-47cb-88db-2bd3c7a12d2f a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.BabelNet .
+
+res:Resource.BabelNet a :SemanticWebResource .
+
+res:Resource.and_SW_83067992-d2f1-4c94-999e-0a2185ac3b82 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.AIFB, res:Resource.BGS .
+
+res:Resource.or_SW_2447961b-ab21-4f96-8257-1058b538c2f2 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Forbes, res:Resource.BGS, res:Resource.Cities, res:Resource.MUTAG,
+    res:Resource.Albums, res:Resource.AAUP, res:Resource.AIFB, res:Resource.Movies .
+
+res:Resource.Forbes a :SemanticWebResource .
+
+res:Resource.Cities a :SemanticWebResource .
+
+res:Resource.Albums a :SemanticWebResource .
+
+res:Resource.AAUP a :SemanticWebResource .
+
+res:Resource.Movies a :SemanticWebResource .
+
+res:Resource.or_SW_8955c9bd-057f-4842-b998-8119ee2035e8 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.GO, res:Resource.ChEBI, res:Resource.KEGG .
+
+res:Resource.GO a :SemanticWebResource .
+
+res:Resource.ChEBI a :SemanticWebResource .
+
+res:Resource.KEGG a :SemanticWebResource .
+
+res:Resource.or_SW_b1285291-c2c9-4667-a1cf-1da9a351647a a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.ConceptNet, res:Resource.YAGO .
+
+res:Resource.ConceptNet a :SemanticWebResource .
+
+res:Resource.YAGO a :SemanticWebResource .
+
+res:Resource.and_SW_3378065d-caae-4195-9d54-3c4ba97cb5f0 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Custom.and_SW_3378065d-caae-4195-9d54-3c4ba97cb5f0.sw2 .
+
+res:Custom.and_SW_3378065d-caae-4195-9d54-3c4ba97cb5f0.sw2 a :SemanticWebResource .
+
+res:Resource.and_SW_46b1e674-99ab-4eca-8b92-fb6594a2d015 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Custom.and_SW_46b1e674-99ab-4eca-8b92-fb6594a2d015.sw2 .
+
+res:Resource.WordNet a :SemanticWebResource .
+
+res:Custom.and_SW_46b1e674-99ab-4eca-8b92-fb6594a2d015.sw2 a :SemanticWebResource .
+
+res:Resource.and_SW_5ffba3e0-fed6-4d30-ad16-d5433c2f8b99 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Custom.and_SW_5ffba3e0-fed6-4d30-ad16-d5433c2f8b99.sw2,
+    res:Resource.ConceptNet, res:Resource.FB15k .
+
+res:Custom.and_SW_5ffba3e0-fed6-4d30-ad16-d5433c2f8b99.sw2 a :SemanticWebResource .
+
+res:Resource.FB15k a :SemanticWebResource .
+
+res:Resource.and_SW_f07cb75c-de18-444e-8c06-3159a07a5c5e a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.ICD, res:Custom.and_SW_f07cb75c-de18-444e-8c06-3159a07a5c5e.sw2 .
+
+res:Resource.ICD a :SemanticWebResource .
+
+res:Custom.and_SW_f07cb75c-de18-444e-8c06-3159a07a5c5e.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_3897ef0c-dafa-4a02-8ade-42e091f14c2a a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Geoquery_880, res:Custom.or_SW_3897ef0c-dafa-4a02-8ade-42e091f14c2a.sw2 .
+
+res:Resource.Geoquery_880 a :SemanticWebResource .
+
+res:Custom.or_SW_3897ef0c-dafa-4a02-8ade-42e091f14c2a.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_3f5cfd31-60d8-4c32-b36b-6108dd09eff9 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Custom.or_SW_3f5cfd31-60d8-4c32-b36b-6108dd09eff9.sw2 .
+
+res:Custom.or_SW_3f5cfd31-60d8-4c32-b36b-6108dd09eff9.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_608f5464-34b1-48b1-9b75-1feacfb87c1b a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Custom.or_SW_608f5464-34b1-48b1-9b75-1feacfb87c1b.sw2 .
+
+res:Resource.FB13 a :SemanticWebResource .
+
+res:Custom.or_SW_608f5464-34b1-48b1-9b75-1feacfb87c1b.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_ace8d494-eaca-4a68-a240-d98084f26b8c a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.CIFAR_100, res:Custom.or_SW_ace8d494-eaca-4a68-a240-d98084f26b8c.sw2 .
+
+res:Resource.CIFAR_100 a :SemanticWebResource .
+
+res:Custom.or_SW_ace8d494-eaca-4a68-a240-d98084f26b8c.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_cccbf419-3f86-487e-b988-a02752d2b824 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.NELL, res:Custom.or_SW_cccbf419-3f86-487e-b988-a02752d2b824.sw2 .
+
+res:Resource.NELL a :SemanticWebResource .
+
+res:Custom.or_SW_cccbf419-3f86-487e-b988-a02752d2b824.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_d820c350-6f95-472f-b8e6-0f102ffed8f6 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Wiki_One, res:Custom.or_SW_d820c350-6f95-472f-b8e6-0f102ffed8f6.sw2 .
+
+res:Resource.Wiki_One a :SemanticWebResource .
+
+res:Custom.or_SW_d820c350-6f95-472f-b8e6-0f102ffed8f6.sw2 a :SemanticWebResource .
+
+res:Resource.or_SW_6c10b760-b596-47d1-9c83-0ca505b60ea3 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Custom.or_SW_6c10b760-b596-47d1-9c83-0ca505b60ea3.sw1, res:Resource.DBLP .
+
+res:Custom.or_SW_6c10b760-b596-47d1-9c83-0ca505b60ea3.sw1 a :SemanticWebResource .
+
+res:Resource.DBLP a :SemanticWebResource .
+
+res:Resource.or_SW_990187b4-b4ab-446d-96ae-e5cb48becbfa a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.DBLP .
+
+res:Resource.or_SW_30bee3b9-7169-4883-b0ab-30af10cc2717 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBPedia50K, res:Resource.DBPedia500k, res:Resource.FB15k .
+
+res:Resource.DBPedia50K a :SemanticWebResource .
+
+res:Resource.DBPedia500k a :SemanticWebResource .
+
+res:Resource.or_SW_729f3938-cf45-4cce-94d1-2ce74c78fe64 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.DrugBank .
+
+res:Resource.DrugBank a :SemanticWebResource .
+
+res:Resource.or_SW_e25223d4-db8a-495b-bb11-9333625bf364 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.SWRC, res:Resource.Eclipse_bugs, res:Resource.OWLS_TC_v2_1 .
+
+res:Resource.SWRC a :SemanticWebResource .
+
+res:Resource.Eclipse_bugs a :SemanticWebResource .
+
+res:Resource.OWLS_TC_v2_1 a :SemanticWebResource .
+
+res:Resource.or_SW_eabf4488-f06a-4a9b-b057-0d542e91c5c6 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Kinship, res:Resource.EnzymeKG .
+
+res:Resource.Kinship a :SemanticWebResource .
+
+res:Resource.EnzymeKG a :SemanticWebResource .
+
+res:Resource.or_SW_d5ee1a61-b41b-4dfb-886a-ed8ffb2e7f53 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.NELL_1M, res:Resource.FB_500K, res:Resource.WN_100K,
+    res:Resource.NELL_50K .
+
+res:Resource.NELL_1M a :SemanticWebResource .
+
+res:Resource.FB_500K a :SemanticWebResource .
+
+res:Resource.WN_100K a :SemanticWebResource .
+
+res:Resource.NELL_50K a :SemanticWebResource .
+
+res:Resource.and_SW_f993ebf7-9286-4817-b508-0c1ded25d9e7 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Biological_Interaction, res:Resource.FB15k .
+
+res:Resource.Biological_Interaction a :SemanticWebResource .
+
+res:Resource.or_SW_134956b7-76f0-4340-8c1d-71c598150ec2 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.NELL79K, res:Resource.FB15k, res:Resource.WN18RR,
+    res:Resource.WN18, res:Resource.FB15k_237 .
+
+res:Resource.NELL79K a :SemanticWebResource .
+
+res:Resource.WN18RR a :SemanticWebResource .
+
+res:Resource.WN18 a :SemanticWebResource .
+
+res:Resource.or_SW_171a448f-cbf6-473f-97d5-96ff35e030e2 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.FB15k, res:Resource.WN11, res:Resource.WN18,
+    res:Resource.FB15k_237 .
+
+res:Resource.WN11 a :SemanticWebResource .
+
+res:Resource.or_SW_29c3e45a-c9ba-4840-9292-3bf73f045ab1 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.WN18, res:Resource.FB15k .
+
+res:Resource.or_SW_46bb6744-c7be-4a7c-b91c-1d75cc1e4892 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.FB15k .
+
+res:Resource.or_SW_657e23b3-500a-4c2a-b4e8-f009bfbc641a a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Countries, res:Resource.FB15k, res:Resource.WN36 .
+
+res:Resource.Countries a :SemanticWebResource .
+
+res:Resource.WN36 a :SemanticWebResource .
+
+res:Resource.or_SW_986f2190-a499-42b7-942d-cb2127d4c021 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Custom.or_SW_986f2190-a499-42b7-942d-cb2127d4c021.sw1, res:Resource.FB15k .
+
+res:Custom.or_SW_986f2190-a499-42b7-942d-cb2127d4c021.sw1 a :SemanticWebResource .
+
+res:Resource.or_SW_73fdea8d-90e6-474e-98a7-4408ab8d9896 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.FB15k_237, res:Resource.FB15k,
+    res:Resource.WN18RR .
+
+res:Resource.or_SW_8ff9853f-c13f-4347-9ca4-ffcfb0db3813 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.FB15k_237, res:Resource.YAGO3_10,
+    res:Resource.FB15k .
+
+res:Resource.YAGO3_10 a :SemanticWebResource .
+
+res:Resource.or_SW_9160fbe2-45fd-4a63-87cb-2600a5d4f393 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBPedia50K, res:Resource.FB15k_237 .
+
+res:Resource.or_SW_f7e889f5-570a-41a2-833d-3c47c615ce3e a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k, res:Resource.FB15k_237, res:Resource.WN18,
+    res:Resource.WN18RR .
+
+res:Resource.or_SW_8a8be8ae-8c54-4a3e-9829-7d28e17b57e2 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k, res:Resource.FB24K .
+
+res:Resource.FB24K a :SemanticWebResource .
+
+res:Resource.or_SW_435f56d2-4de0-470e-9d78-cecf5c2e4160 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB5M, res:Resource.FB2M .
+
+res:Resource.FB5M a :SemanticWebResource .
+
+res:Resource.FB2M a :SemanticWebResource .
+
+res:Resource.and_SW_b991e8ef-c15d-43f4-aad7-90cfd66efed1 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Resource.Freebase .
+
+res:Resource.Freebase a :SemanticWebResource .
+
+res:Resource.and_SW_f9c91a47-75f8-4d06-ab5f-d8b29df95252 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Custom.and_SW_f9c91a47-75f8-4d06-ab5f-d8b29df95252.sw1, res:Resource.Freebase .
+
+res:Custom.and_SW_f9c91a47-75f8-4d06-ab5f-d8b29df95252.sw1 a :SemanticWebResource .
+
+res:Resource.or_SW_19e0d154-8d23-4f2e-9484-68df0d406647 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Resource.Freebase .
+
+res:Resource.or_SW_2f3e8c65-263c-44f2-b15c-da95131def50 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Freebase, res:Resource.YAGO .
+
+res:Resource.and_SW_e5617793-3af6-4c62-bb46-5364f420f704 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.GO, res:Resource.GOA .
+
+res:Resource.GOA a :SemanticWebResource .
+
+res:Resource.and_SW_f086a9e2-8b18-4647-a858-968f8db4c18c a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Google_Knowledge_Graph, res:Resource.Wikidata .
+
+res:Resource.Google_Knowledge_Graph a :SemanticWebResource .
+
+res:Resource.Wikidata a :SemanticWebResource .
+
+res:Resource.or_SW_56242647-423c-495a-b06e-18e424153bb7 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.GovWILD, res:Resource.Magnatune .
+
+res:Resource.GovWILD a :SemanticWebResource .
+
+res:Resource.Magnatune a :SemanticWebResource .
+
+res:Resource.and_SW_5b7033a1-8788-42d4-a5bd-455673ec05e2 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.GO, res:Resource.HPO, res:Resource.DO, res:Resource.ChEBI .
+
+res:Resource.HPO a :SemanticWebResource .
+
+res:Resource.DO a :SemanticWebResource .
+
+res:Resource.and_SW_d69261e3-add0-4db3-be95-c3e87383ca40 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.GO, res:Resource.HPO .
+
+res:Resource.and_SW_5fc01908-82f7-40d0-bec9-cf22420e247d a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Wikipedia, res:Resource.ImageNet .
+
+res:Resource.Wikipedia a :SemanticWebResource .
+
+res:Resource.ImageNet a :SemanticWebResource .
+
+res:Resource.or_SW_f4f9f88f-c618-433f-a2bb-b6f40ed430cd a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.ISCN, res:Resource.ODP .
+
+res:Resource.ISCN a :SemanticWebResource .
+
+res:Resource.ODP a :SemanticWebResource .
+
+res:Resource.or_SW_83cf0300-fe0d-41aa-bf8e-f229c21dabaa a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k, res:Resource.Kinship, res:Resource.UMLS, res:Resource.FB15k_237,
+    res:Resource.Nations .
+
+res:Resource.UMLS a :SemanticWebResource .
+
+res:Resource.Nations a :SemanticWebResource .
+
+res:Resource.and_SW_29a49faf-1091-4415-869b-fff2b29be60b a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.CCS, res:Resource.KnowLife .
+
+res:Resource.CCS a :SemanticWebResource .
+
+res:Resource.KnowLife a :SemanticWebResource .
+
+res:Resource.and_SW_9cc476fa-6ed2-4982-a7b7-c717f1ec581b a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.MO, res:Resource.LinkedMDB, res:Resource.DBpedia .
+
+res:Resource.MO a :SemanticWebResource .
+
+res:Resource.LinkedMDB a :SemanticWebResource .
+
+res:Resource.or_SW_ff0e7a9c-292f-4654-8998-3eedcfc97fb5 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.OntoBiotope, res:Resource.MedDRA .
+
+res:Resource.OntoBiotope a :SemanticWebResource .
+
+res:Resource.MedDRA a :SemanticWebResource .
+
+res:Resource.and_SW_b746d6c0-07f9-412d-a265-06b03cc96840 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.NCBI_Taxonomy, res:Resource.Missing_Info .
+
+res:Resource.NCBI_Taxonomy a :SemanticWebResource .
+
+res:Resource.Missing_Info a :SemanticWebResource .
+
+res:Resource.or_SW_b4366dad-51b7-446f-8069-2817b9ed09f9 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.NELL_995 .
+
+res:Resource.NELL_995 a :SemanticWebResource .
+
+res:Resource.or_SW_f5234669-283e-4195-968b-3bd0a0c23068 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.WN11, res:Resource.NELL_995 .
+
+res:Resource.or_SW_da3cf04a-661f-4098-ba8d-627b88a417e1 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.NELL_One, res:Resource.YAGO .
+
+res:Resource.NELL_One a :SemanticWebResource .
+
+res:Resource.and_SW_16c5172c-3b80-455f-9bc0-1fe94b2d3dfc a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.NIST_TAC_KBP .
+
+res:Resource.NIST_TAC_KBP a :SemanticWebResource .
+
+res:Resource.and_SW_c864c18c-90f3-4f00-96e2-937f93f05889 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Custom.and_SW_c864c18c-90f3-4f00-96e2-937f93f05889.sw1, res:Resource.or_SW_1331114f-7c71-49f5-8f98-3f8f2cddd7d2 .
+
+res:Custom.and_SW_c864c18c-90f3-4f00-96e2-937f93f05889.sw1 a :SemanticWebResource .
+
+res:Resource.or_SW_1331114f-7c71-49f5-8f98-3f8f2cddd7d2 a :SemanticWebResource .
+
+res:Resource.and_SW_53187e6d-84f4-411a-b9cf-b431118a929c a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Probase, res:Resource.or_SW_29c3e45a-c9ba-4840-9292-3bf73f045ab1 .
+
+res:Resource.Probase a :SemanticWebResource .
+
+res:Resource.and_SW_3ebe0a31-fd99-4eb4-97a0-51d274f8f2f2 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Probase, res:Resource.or_SW_d8c65c33-31ed-44b8-be3f-0bd482ec9730,
+    res:Resource.FB15k .
+
+res:Resource.or_SW_d8c65c33-31ed-44b8-be3f-0bd482ec9730 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Probase, res:Resource.WN18 .
+
+res:Resource.and_SW_c60a2767-e712-4ca9-854c-5c19f40ce1ce a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Wikipedia, res:Resource.PO, res:Resource.ChEBI, res:Resource.GO,
+    res:Resource.PATO .
+
+res:Resource.PO a :SemanticWebResource .
+
+res:Resource.PATO a :SemanticWebResource .
+
+res:Resource.and_SW_6fc54c68-f3a2-4d96-9708-7a9226e2bf8c a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Entrez_Gene, res:Resource.PR, res:Resource.SO, res:Resource.ChEBI,
+    res:Resource.GO, res:Resource.NCBI_Taxonomy, res:Resource.CL .
+
+res:Resource.Entrez_Gene a :SemanticWebResource .
+
+res:Resource.PR a :SemanticWebResource .
+
+res:Resource.SO a :SemanticWebResource .
+
+res:Resource.CL a :SemanticWebResource .
+
+res:Resource.and_SW_11a562f6-24d1-4367-b53a-65d2946e15ec a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Arabidopsis_Hormone_Database_2.0, res:Resource.PTO .
+
+res:Resource.Arabidopsis_Hormone_Database_2.0 a :SemanticWebResource .
+
+res:Resource.PTO a :SemanticWebResource .
+
+res:Resource.and_SW_9f0bca8c-e786-48a9-9a75-1039073c6634 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Chemical_Complex_ontology, res:Resource.REX .
+
+res:Resource.Chemical_Complex_ontology a :SemanticWebResource .
+
+res:Resource.REX a :SemanticWebResource .
+
+res:Resource.and_SW_441adbaf-3b3c-497e-9405-c07979a8bfa1 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Custom.and_SW_441adbaf-3b3c-497e-9405-c07979a8bfa1.sw1, res:Resource.RxNorm .
+
+res:Custom.and_SW_441adbaf-3b3c-497e-9405-c07979a8bfa1.sw1 a :SemanticWebResource .
+
+res:Resource.RxNorm a :SemanticWebResource .
+
+res:Resource.and_SW_428dcfa8-9a66-4ddc-819b-8251978cc4e9 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Resource.s_case_ontologies .
+
+res:Resource.s_case_ontologies a :SemanticWebResource .
+
+res:Resource.and_SW_bb5342da-57c6-45de-a9c7-f8aac0579326 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.UMLS, res:Resource.SNOMED_CT .
+
+res:Resource.SNOMED_CT a :SemanticWebResource .
+
+res:Resource.and_SW_2247d2d5-5668-4d80-9a46-c8c3613fe381 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.MeSH, res:Resource.UMLS .
+
+res:Resource.MeSH a :SemanticWebResource .
+
+res:Resource.or_SW_842f0645-3a5b-4e63-a339-ca1a99de476d a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Baidu_SKE, res:Resource.WebNLG, res:Resource.SemEval_2010_Task_8 .
+
+res:Resource.Baidu_SKE a :SemanticWebResource .
+
+res:Resource.WebNLG a :SemanticWebResource .
+
+res:Resource.SemEval_2010_Task_8 a :SemanticWebResource .
+
+res:Resource.or_SW_370501e9-fb6a-4365-bc30-f1757c8931e1 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.NELL_One, res:Resource.Wiki_One .
+
+res:Resource.and_SW_ced8d2b1-9619-49d5-bd07-8a6100eedca3 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Wikidata, res:Resource.YAGO .
+
+res:Resource.and_SW_eee9e841-9b1b-4e7d-9215-616f22d40a7d a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Freebase, res:Resource.Wikidata .
+
+res:Resource.or_SW_6967c35d-d532-4528-a256-4710dcecde38 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Wikidata, res:Resource.YAGO .
+
+res:Resource.or_SW_a13b07ee-92cd-47d8-a58b-ac0dc021a2a7 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.Wikidata .
+
+res:Resource.or_SW_1fb71cdc-3efa-4270-889f-5d97551a4ffa a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.UMLS, res:Resource.WikiMovies, res:Resource.WN18,
+    res:Resource.FB15k .
+
+res:Resource.WikiMovies a :SemanticWebResource .
+
+res:Resource.and_SW_f6828ab5-e7cc-4718-ac12-2bad2530f084 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.MeSH, res:Resource.Wikipedia, res:Resource.Wikidata .
+
+res:Resource.or_SW_0706d5e5-7959-4bb5-b4f2-e0a7414a4c1d a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.WN11, res:Resource.FB15k .
+
+res:Resource.or_SW_9d68163d-1d2d-4b5d-8ab5-dac2d00f35a0 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.WN11 .
+
+res:Resource.or_SW_f27afb1c-c427-4318-aea0-63d6651f29dc a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB13, res:Resource.WN11, res:Resource.WN18, res:Resource.FB15k .
+
+res:Resource.or_SW_4decf0c1-64fa-4a9a-ae3b-a499dfc58265 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.NELL186, res:Resource.WN18, res:Resource.FB15k .
+
+res:Resource.NELL186 a :SemanticWebResource .
+
+res:Resource.or_SW_cc6bef6e-6910-47b0-a387-72c7ee551e13 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB122, res:Resource.WN18 .
+
+res:Resource.FB122 a :SemanticWebResource .
+
+res:Resource.or_SW_de3b0dac-c0cb-4046-9d6f-ecfa36347ec9 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.WN18, res:Resource.FB15k .
+
+res:Resource.or_SW_13f81ebf-653e-48ba-b2a5-813f142438aa a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.WN18RR .
+
+res:Resource.or_SW_4e811996-3430-440e-986c-0d5dac311546 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Custom.or_SW_4e811996-3430-440e-986c-0d5dac311546.sw1, res:Resource.WN18RR,
+    res:Resource.NELL_995, res:Resource.UMLS, res:Resource.FB15k_237 .
+
+res:Custom.or_SW_4e811996-3430-440e-986c-0d5dac311546.sw1 a :SemanticWebResource .
+
+res:Resource.or_SW_5ef995b9-cf2b-47bf-8bbb-03b18c8dab4f a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k, res:Resource.WN18RR, res:Resource.Kinship,
+    res:Resource.WN18, res:Resource.UMLS, res:Resource.FB15k_237 .
+
+res:Resource.or_SW_a0c18312-5b12-4e87-ad58-15aa9b9de8ff a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.FB15k_237, res:Resource.WN18RR, res:Resource.NELL_995 .
+
+res:Resource.and_SW_6686b42f-1483-4817-8ac2-dff0696093c7 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Wikipedia, res:Resource.WordNet .
+
+res:Resource.and_SW_8f372e68-64ef-49c1-8d03-39af51980d2a a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.PPDB_Paraphrase_Dataset, res:Resource.WordNet, res:Resource.ConceptNet .
+
+res:Resource.PPDB_Paraphrase_Dataset a :SemanticWebResource .
+
+res:Resource.and_SW_d30355da-1667-4c2a-8be4-6cd4f22db271 a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.SUMO, res:Resource.WordNet .
+
+res:Resource.SUMO a :SemanticWebResource .
+
+res:Resource.or_SW_06c4e5ba-79f7-4e03-af6f-a80c668a45c3 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.WordNet, res:Resource.YAGO .
+
+res:Resource.and_SW_8e3cb761-5cd2-4bc4-b559-00def5b3378e a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.Freebase, res:Resource.YAGO .
+
+res:Resource.and_SW_d1f7ec7e-b96b-4d5f-820e-8f1f9a8ae34b a :SemanticWebResource, :AndCompound;
+  :hasCompoundElement res:Resource.WordNet, res:Resource.YAGO .
+
+res:Resource.or_SW_5ea40c79-c00e-4f18-bb2b-f489333107cb a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DBpedia, res:Resource.YAGO .
+
+res:Resource.or_SW_ccffc71f-3dd6-4a4d-8efc-7975c0e9b906 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.IMDb, res:Resource.YAGO .
+
+res:Resource.IMDb a :SemanticWebResource .
+
+res:Resource.or_SW_dbff25a6-1783-4990-9416-10fd621e9ef9 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.Wikidata12k, res:Resource.YAGO11K .
+
+res:Resource.Wikidata12k a :SemanticWebResource .
+
+res:Resource.YAGO11K a :SemanticWebResource .
+
+res:Resource.or_SW_cb7d8a66-14ee-47e8-b91b-3da06edf4470 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.ICEWS_05_15, res:Resource.YAGO15K, res:Resource.ICEWS_14,
+    res:Resource.Wikidata .
+
+res:Resource.ICEWS_05_15 a :SemanticWebResource .
+
+res:Resource.YAGO15K a :SemanticWebResource .
+
+res:Resource.ICEWS_14 a :SemanticWebResource .
+
+res:Resource.or_SW_d0bade88-f7ef-46d3-ada2-bd36c42a1f49 a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:Resource.DB111K_174, res:Resource.YAGO26K_906 .
+
+res:Resource.DB111K_174 a :SemanticWebResource .
+
+res:Resource.YAGO26K_906 a :SemanticWebResource .
