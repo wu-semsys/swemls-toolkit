@@ -1,4 +1,4 @@
-package id.semantics.shacl;
+package id.semantics;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,15 +13,23 @@ import org.topbraid.shacl.rules.RuleUtil;
 import org.topbraid.shacl.validation.ValidationUtil;
 import org.topbraid.shacl.vocabulary.SH;
 
-public class SwemlsTookit {
+import id.semantics.helper.SwissKnife;
+
+/**
+ * A simple app to help the generation of SWeMLS-KG
+ */
+public class SwemlsToolkit {
 
     public static void main(String[] args) throws FileNotFoundException {
 
         String ontologyFile = "https://w3id.org/semsys/ns/swemls/ontology.ttl";
         
         String inputFolder = "input/";
+        // ... File "input/swemls-patterns.ttl" is an aggregation of all patterns in the "input/patterns" folder
         String inputPatterns = inputFolder + "swemls-patterns.ttl";
+        // ... File "input/swemls-shapes.ttl" is an aggregation of all SHACL constraints & rules in the "input/shapes" folder
         String inputShapes = inputFolder + "swemls-shapes.ttl";
+        // ... File "swemls-sms-metadata.ttl" is the RDF Graph representation of SWeMLS metadata extracted from the SMS process
         String inputInstances = inputFolder + "swemls-sms-metadata.ttl";
 
         String outputFolder = "output/";
@@ -59,7 +67,7 @@ public class SwemlsTookit {
 
         // generate final knowledge graphs
         } else {
-            // load all paterns (and write it to a separate file)
+            // load the representation of SWeMLS patterns to be added to the final KG
             Model patternGraph = SwissKnife.initAndLoadModelFromResource(inputPatterns, Lang.TURTLE);
 
             // create an integrated KG

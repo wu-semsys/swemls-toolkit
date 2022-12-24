@@ -66,6 +66,14 @@ res:HBX8K8CI.ML1  rdf:type            :SystemComponent , rdfs:Resource , :Machin
         :componentOutput              res:Custom.HBX8K8CI.sw2 ;
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it." ;
+  owl:annotatedProperty  rdfs:subPropertyOf ;
+  owl:annotatedSource    prov:wasAttributedTo ;
+  owl:annotatedTarget    prov:wasInfluencedBy ;
+  prov:definition        "IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. "
+] .
+
 res:Custom.X2PA3MIR.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "X2PA3MIR Data-2" .
@@ -154,7 +162,7 @@ res:Resource.or_SW_3f5cfd31-60d8-4c32-b36b-6108dd09eff9
         :hasCompoundElement  res:Custom.or_SW_3f5cfd31-60d8-4c32-b36b-6108dd09eff9.sw2 , res:Resource.DBpedia .
 
 res:StatisticalModel.FCA
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "FCA [Formal concept analysis]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -233,7 +241,7 @@ res:Pattern.T1.ML2  rdf:type   :WorkflowTemplateProcessML , opmw:WorkflowTemplat
         rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
         rdfs:comment     "A Machine Learning component" ;
         rdfs:label       "ML Component" ;
-        rdfs:subClassOf  rdfs:Resource , p-plan:Step , :MachineLearningComponent , :SystemComponent .
+        rdfs:subClassOf  p-plan:Step , rdfs:Resource , :MachineLearningComponent , :SystemComponent .
 
 res:Task.Graph_Alignment
         rdf:type                skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
@@ -368,7 +376,7 @@ res:StatisticalModel.and_ML_543e05e6-cc69-4fb7-b0a5-f46248d107b4
 owl:DatatypeProperty  rdf:type  rdfs:Class , rdfs:Resource .
 
 res:StatisticalModel.HyTE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "HyTE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -492,12 +500,12 @@ res:Resource.PTO  rdf:type     :Model , :Instance , :SemanticWebResource , owl:N
         :hasResourceSize       res:ResourceSize.1K_10K ;
         :hasResourceType       res:ResourceType.Ontology .
 
+res:Pattern.O4.Data4  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
 res:Custom.IMSIVU9W.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "IMSIVU9W Data-1" .
-
-res:Pattern.O4.Data4  rdf:type     :TemplateArtifactData ;
-        opmw:isVariableOfTemplate  res:Pattern.O4 .
 
 res:Custom.E7PC4VWW.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -512,7 +520,7 @@ res:Pattern.T15.SW1  rdf:type      :TemplateArtifactSW ;
 
 :M-Pattern  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:label       "M-Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :M-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :M-Pattern , :Pattern .
 
 res:Custom.2HJQGCD4.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -584,7 +592,7 @@ res:SLHWYIEJ.ML2  rdf:type            p-plan:Step , :SystemComponent , :MachineL
         :hasCorrespondingPatternStep  res:Pattern.T2.ML2 .
 
 res:StatisticalModel.SOM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SOM [Kohonen-Map; Self Organizing Map]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -713,7 +721,7 @@ res:ResourceSize.500_1K
         rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
         rdfs:comment     "A Knowledge Representation component" ;
         rdfs:label       "KR Component" ;
-        rdfs:subClassOf  rdfs:Resource , p-plan:Step , :KnowledgeRepresentationComponent , :SystemComponent .
+        rdfs:subClassOf  p-plan:Step , rdfs:Resource , :KnowledgeRepresentationComponent , :SystemComponent .
 
 res:System_VYWK5ZXL  rdf:type     p-plan:Plan , prov:Entity , :System , p-plan:Entity , prov:Plan , rdfs:Resource ;
         rdfs:label                "System VYWK5ZXL" ;
@@ -814,7 +822,7 @@ res:6SLJRL92.ML1  rdf:type            p-plan:Step , rdfs:Resource , :SystemCompo
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.Swivel
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Swivel" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -1006,7 +1014,7 @@ res:Resource.or_SW_f7e889f5-570a-41a2-833d-3c47c615ce3e
 
 prov:hadRole  rdf:type             owl:ObjectProperty , rdfs:Resource , rdf:Property ;
         rdfs:comment               "The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ]."@en , "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." ;
-        rdfs:domain                prov:Influence , _:b1 ;
+        rdfs:domain                _:b1 , prov:Influence ;
         rdfs:isDefinedBy           <http://www.w3.org/ns/prov-o#> ;
         rdfs:label                 "hadRole" ;
         rdfs:range                 prov:Role ;
@@ -1150,14 +1158,14 @@ res:Resource.Wiktionary
         :hasResourceType       res:ResourceType.Thesaurus .
 
 res:StatisticalModel.SSE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SSE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
 
 res:StatisticalModel.LiDA
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "LiDA [Linear Discriminant Analysis]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -1168,7 +1176,7 @@ res:StatisticalModel.and_ML_c173cf9c-9e79-4f29-bb45-b507102868c4
         :hasCompoundElement  res:StatisticalModel.Hierarchical_Clustering , res:StatisticalModel.k-means .
 
 res:StatisticalModel.k-means
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "k-means" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -1358,6 +1366,22 @@ res:Custom.IXYUDVME.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "IXYUDVME Data-1" .
 
+_:b2    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b2 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Delegation ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:Derivation ;
+                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                     rdf:first  prov:End ;
+                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                                  rdf:first  prov:Start ;
+                                                                  rdf:rest   ()
+                                                                ]
+                                                   ]
+                                      ]
+                         ] .
+
 res:Custom.LVVAQ4MM.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
@@ -1379,7 +1403,7 @@ res:Custom.QVKG5K8F.d4
         rdfs:label  "QVKG5K8F Data-4" .
 
 res:StatisticalModel.G-RNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "G-RNN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -1657,7 +1681,7 @@ skos:Collection  rdf:type  rdfs:Resource , owl:Class , rdfs:Class ;
         skos:scopeNote    "Labelled collections can be used where you would like a set of concepts to be displayed under a 'node label' in the hierarchy."@en .
 
 res:StatisticalModel.Decision_Trees
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Decision tree [random forest, C4.5]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -2065,7 +2089,7 @@ res:Pattern.O1.Data2  rdf:type     :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.O1 .
 
 res:StatisticalModel.ComplEx
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ComplEx" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -2423,7 +2447,7 @@ res:Custom.NHSLJG7I.d1
         rdfs:label  "NHSLJG7I Data-1" .
 
 res:StatisticalModel.TransX
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "TransX [TransE, TransD, TransH, TransR, ...]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -2483,16 +2507,16 @@ res:Custom.N36E9RS7.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-res:Custom.Y2V7XGXH.d2
-        rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
-        rdfs:label  "Y2V7XGXH Data-2" .
-
 res:Domain.Digital_Humantities
         rdf:type                skos:Concept , rdfs:Resource , :ApplicationDomain , owl:NamedIndividual ;
         rdfs:label              "Digital Humantities" ;
         skos:broader            res:Domain.Culture_Education ;
         skos:broaderTransitive  res:Domain.Culture_Education ;
         skos:semanticRelation   res:Domain.Culture_Education .
+
+res:Custom.Y2V7XGXH.d2
+        rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
+        rdfs:label  "Y2V7XGXH Data-2" .
 
 res:Task.Text_Classification
         rdf:type                skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
@@ -2633,7 +2657,7 @@ res:StatisticalModel.and_ML_dff111af-d8dd-46fd-8240-f6275d9af82a
         :hasCompoundElement  res:StatisticalModel.w2v , res:StatisticalModel.BiLSTM-CRF .
 
 res:StatisticalModel.SimplE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SimplE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -2797,7 +2821,7 @@ res:RM6W33SD.ML1  rdf:type            :SystemComponent , p-plan:Step , :MachineL
 :Atomic-Pattern  rdf:type  rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Basic pattern type: a single algorithmic module consumes a single input" ;
         rdfs:label       "Atomic Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :Atomic-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :Atomic-Pattern , :Pattern .
 
 res:Custom.4QP5XAGX.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -2840,7 +2864,7 @@ res:Pattern.T23.SW1  rdf:type      :TemplateArtifactSW ;
         opmw:isVariableOfTemplate  res:Pattern.T23 .
 
 res:StatisticalModel.SVM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SVM [Support Vector Machine]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -2948,6 +2972,13 @@ res:ZMT6UI37.KR1  rdf:type            :KnowledgeRepresentationComponent , :Syste
         :componentOutput              res:Custom.ZMT6UI37.sw2 ;
         :hasCorrespondingPatternStep  res:Pattern.T12.KR1 ;
         :hasProcessingEngine          res:ProcessingEngine.CompoundKR_1 .
+
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to \nhttp://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 'wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.'" ;
+  owl:annotatedProperty  rdfs:subPropertyOf ;
+  owl:annotatedSource    prov:wasRevisionOf ;
+  owl:annotatedTarget    prov:wasDerivedFrom
+] .
 
 res:System_S4QUGZK6  rdf:type     p-plan:Plan , :System , prov:Plan , p-plan:Entity , prov:Entity , rdfs:Resource ;
         rdfs:label                "System S4QUGZK6" ;
@@ -3181,7 +3212,7 @@ res:System_7FLYGG92  rdf:type     p-plan:Plan , prov:Plan , p-plan:Entity , rdfs
         :hasVariableSW1           res:Resource.WordNet .
 
 res:StatisticalModel.Metapath2Vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Metapath2Vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -3241,16 +3272,6 @@ res:Pattern.T23.ML1  rdf:type  :WorkflowTemplateProcessML , opmw:WorkflowTemplat
 
 res:Custom.and_SW_441adbaf-3b3c-497e-9405-c07979a8bfa1.sw1
         rdf:type  :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource .
-
-_:b2    rdf:type         rdfs:Resource , rdfs:Datatype , rdfs:Class ;
-        rdfs:subClassOf  _:b2 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  xsd:anyURI ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  xsd:string ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 res:System_8FHAYRD4  rdf:type     prov:Entity , p-plan:Plan , p-plan:Entity , rdfs:Resource , :System , prov:Plan ;
         rdfs:label                "System 8FHAYRD4" ;
@@ -3366,7 +3387,7 @@ res:Custom.FN4KW6KK.sw1
         rdfs:subPropertyOf  :hasSystemIO , :hasVariableData5 , :hasDataIO .
 
 res:StatisticalModel.ULMfit
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ULMfit" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -3464,7 +3485,7 @@ res:System_7I55DSU5  rdf:type     p-plan:Entity , prov:Plan , :System , prov:Ent
         :hasVariableSW1           res:Custom.7I55DSU5.sw1 .
 
 <http://www.w3.org/ns/prov-o-20120312>
-        rdf:type  prov:Entity , rdfs:Resource , _:b3 .
+        rdf:type  _:b3 , prov:Entity , rdfs:Resource .
 
 skos:mappingRelation  rdf:type  rdfs:Resource , owl:ObjectProperty , rdf:Property ;
         rdfs:comment        "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice."@en ;
@@ -3753,16 +3774,6 @@ res:DRZHIB2W.KR1  rdf:type            p-plan:Step , :SystemComponent , :Knowledg
         :componentOutput              res:Custom.DRZHIB2W.sw2 ;
         :hasCorrespondingPatternStep  res:Pattern.O2.KR1 ;
         :hasProcessingEngine          res:ProcessingEngine.Reasoner .
-
-_:b4    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b4 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  opmw:WorkflowExecutionAccount ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  opmw:WorkflowExecutionProcess ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 :componentModel  rdf:type  rdf:Property , rdfs:Resource , owl:ObjectProperty ;
         rdfs:comment  "Linking the system with component models" ;
@@ -4104,6 +4115,9 @@ res:XJYEQAAH.ML1  rdf:type            rdfs:Resource , p-plan:Step , :MachineLear
         :componentOutput              res:Custom.XJYEQAAH.sw1 ;
         :hasCorrespondingPatternStep  res:Pattern.A2.ML1 .
 
+res:Pattern.O2.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.O2 .
+
 res:T9J7NPVB.ML1  rdf:type            :SystemComponent , :MachineLearningComponent , p-plan:Step , rdfs:Resource ;
         rdfs:label                    "T9J7NPVB-ML1 (Compound)" ;
         p-plan:hasInputVar            res:Resource.and_SW_c60a2767-e712-4ca9-854c-5c19f40ce1ce , res:Custom.T9J7NPVB.d1 ;
@@ -4113,15 +4127,12 @@ res:T9J7NPVB.ML1  rdf:type            :SystemComponent , :MachineLearningCompone
         :componentOutput              res:Custom.T9J7NPVB.d2 ;
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
-res:Pattern.O2.SW1  rdf:type       :TemplateArtifactSW ;
-        opmw:isVariableOfTemplate  res:Pattern.O2 .
-
 res:Custom.AKNQX8EB.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.Graph2Seq
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Graph2Seq" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -4542,7 +4553,7 @@ res:System_BLKDD8U4  rdf:type     prov:Entity , p-plan:Plan , :System , p-plan:E
         :hasVariableSW2           res:Custom.BLKDD8U4.sw2 .
 
 res:StatisticalModel.Markov_process_Models
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Markov Model" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -4561,22 +4572,6 @@ res:66N3EP3U.ML1  rdf:type            p-plan:Step , :SystemComponent , rdfs:Reso
         :componentOutput              res:Custom.66N3EP3U.sw2 ;
         :hasCorrespondingPatternStep  res:Pattern.A1.ML1 .
 
-_:b5    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b5 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Delegation ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:Derivation ;
-                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                     rdf:first  prov:End ;
-                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                                  rdf:first  prov:Start ;
-                                                                  rdf:rest   ()
-                                                                ]
-                                                   ]
-                                      ]
-                         ] .
-
 res:Q7WHWCDB.ML1  rdf:type            rdfs:Resource , p-plan:Step , :SystemComponent , :MachineLearningComponent ;
         rdfs:label                    "Q7WHWCDB-ML1 (Compound)" ;
         p-plan:hasInputVar            res:Resource.or_SW_8a8be8ae-8c54-4a3e-9829-7d28e17b57e2 ;
@@ -4585,6 +4580,26 @@ res:Q7WHWCDB.ML1  rdf:type            rdfs:Resource , p-plan:Step , :SystemCompo
         :componentModel               res:StatisticalModel.and_ML_290dfda2-f42a-4600-b0b6-0ec21a04d517 ;
         :componentOutput              res:Custom.Q7WHWCDB.d1 ;
         :hasCorrespondingPatternStep  res:Pattern.I1.ML1 .
+
+[ rdf:type               owl:Axiom ;
+  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence" ;
+  owl:annotatedProperty  rdfs:range ;
+  owl:annotatedSource    prov:wasInfluencedBy ;
+  owl:annotatedTarget    [ rdf:type     owl:Class ;
+                           owl:unionOf  [ rdf:type   rdf:List , rdfs:Resource ;
+                                          rdf:first  prov:Activity ;
+                                          rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                       rdf:first  prov:Agent ;
+                                                       rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                                    rdf:first  prov:Entity ;
+                                                                    rdf:rest   ()
+                                                                  ]
+                                                     ]
+                                        ]
+                         ] ;
+  prov:definition        "influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;" ;
+  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"
+] .
 
 res:Custom.6EFNU3FT.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -4838,7 +4853,7 @@ res:SymbolUsage.Missing_Info
         rdfs:label  "Missing Info" .
 
 res:StatisticalModel.TransCorRe
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "TransCorRe" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -4864,14 +4879,14 @@ res:Custom.6ESPJCFS.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "6ESPJCFS Data-1" .
 
+res:Custom.NICVBB7G.sw2
+        rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
+        rdfs:label  "CustomSWR" .
+
 res:Pattern.T15  rdf:type  opmw:WorklowTemplate , opmw:WorkflowTemplate , :T-Pattern , :Pattern , rdfs:Resource , owl:NamedIndividual ;
         rdfs:comment   "[sym -> KR-> sym/sym -> ML -> sym]" , "[sym -> KR -> sym/sym -> ML -> sym]" ;
         rdfs:label     "Pattern T15" , "T15" , "OB-46" ;
         skos:altLabel  "OB-46" .
-
-res:Custom.NICVBB7G.sw2
-        rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
-        rdfs:label  "CustomSWR" .
 
 res:System_6Q95RCK8  rdf:type     prov:Plan , p-plan:Entity , rdfs:Resource , prov:Entity , p-plan:Plan , :System ;
         rdfs:label                "System 6Q95RCK8" ;
@@ -4995,7 +5010,7 @@ res:Custom.E89835SZ.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.Neural_Attention_Model
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Neural Attention Model" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -5084,12 +5099,6 @@ res:ResourceFormalism.OWL2
         rdf:type    rdfs:Resource , :ResourceFormalism , owl:NamedIndividual ;
         rdfs:label  "OWL2" .
 
-res:Task.Chatbot  rdf:type      skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
-        rdfs:label              "Chatbot" ;
-        skos:broader            <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> ;
-        skos:broaderTransitive  <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> ;
-        skos:semanticRelation   <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> .
-
 opmw:uses  rdf:type         rdf:Property , rdfs:Resource , owl:ObjectProperty ;
         rdfs:comment        "Property that binds a workflow template process to the workflow template artifact that generates it.\n\nExample:\n@prefix opmw: <http://www.opmw.org/ontology/> .\n\n<http://www.opmw.org/export/resource/WorkflowTemplateProcess/AQUAFLOW_EDM_REAERATIONEDM>\n     a opmw:WorkflowTemplateProcess;\n     opmw:uses <http://www.opmw.org/export/resource/DataVariable/PARAMETERSFILE>."@en ;
         rdfs:domain         opmw:WorkflowTemplateProcess ;
@@ -5104,12 +5113,11 @@ res:Task.Analogical_reasoning
         skos:broaderTransitive  res:Task.NLP_Information_Retrieval ;
         skos:semanticRelation   res:Task.NLP_Information_Retrieval .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information." ;
-  owl:annotatedProperty  rdfs:subPropertyOf ;
-  owl:annotatedSource    prov:hadPrimarySource ;
-  owl:annotatedTarget    prov:wasDerivedFrom
-] .
+res:Task.Chatbot  rdf:type      skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
+        rdfs:label              "Chatbot" ;
+        skos:broader            <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> ;
+        skos:broaderTransitive  <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> ;
+        skos:semanticRelation   <http://semantic-systems.net/swemls/Task.NLP_QA_&_conversational> .
 
 res:Custom.ICC92F7T.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -5404,7 +5412,7 @@ res:Pattern.F1.Data2  rdf:type     :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.F1 .
 
 res:StatisticalModel.Gated_CNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Gated CNN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -5413,12 +5421,22 @@ res:StatisticalModel.Gated_CNN
 res:Pattern.T11.SW1  rdf:type      :TemplateArtifactSW ;
         opmw:isVariableOfTemplate  res:Pattern.T11 .
 
-:Ireland  rdf:type  rdfs:Resource , :Country , owl:NamedIndividual ;
-        rdfs:label  "Ireland" .
+_:b1    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b1 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Association ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:InstantaneousEvent ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
 
 res:Pattern.Y4.SW2  rdf:type       :TemplateArtifactSW ;
         opmw:isGeneratedBy         res:Pattern.Y4.ML1 ;
         opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+:Ireland  rdf:type  rdfs:Resource , :Country , owl:NamedIndividual ;
+        rdfs:label  "Ireland" .
 
 res:Custom.86A98Y3D.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
@@ -5598,7 +5616,7 @@ res:Pattern.T18.SW1  rdf:type      :TemplateArtifactSW ;
         opmw:isVariableOfTemplate  res:Pattern.T18 .
 
 res:StatisticalModel.GAT
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GAT [Graph Attention Networks]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -5621,6 +5639,13 @@ res:Resource.and_SW_5ffba3e0-fed6-4d30-ad16-d5433c2f8b99
 res:Custom.4W67J8Z5.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
+
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or \"quoting\", some or all of it. " ;
+  owl:annotatedProperty  rdfs:subPropertyOf ;
+  owl:annotatedSource    prov:wasQuotedFrom ;
+  owl:annotatedTarget    prov:wasDerivedFrom
+] .
 
 res:DDIQUZN2.ML1  rdf:type            :SystemComponent , rdfs:Resource , :MachineLearningComponent , p-plan:Step ;
         rdfs:label                    "DDIQUZN2-ML1 (Compound)" ;
@@ -5839,13 +5864,6 @@ res:Custom.HFNS3695.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to \nhttp://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 'wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.'" ;
-  owl:annotatedProperty  rdfs:subPropertyOf ;
-  owl:annotatedSource    prov:wasRevisionOf ;
-  owl:annotatedTarget    prov:wasDerivedFrom
-] .
-
 res:Custom.GLYEN5MS.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "GLYEN5MS Data-1" .
@@ -5920,7 +5938,7 @@ res:Custom.BH5I3GKS.d2
         rdfs:label  "BH5I3GKS Data-2" .
 
 res:StatisticalModel.On2Vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "On2Vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -6021,11 +6039,15 @@ res:Custom.NRRDBNV6.d1
         rdfs:label  "NRRDBNV6 Data-1" .
 
 res:StatisticalModel.Matrix_Factorization
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Matrix Factorization" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
+
+res:Pattern.T19.SW4  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T19.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T19 .
 
 res:System_JGIRW6NC  rdf:type     p-plan:Entity , p-plan:Plan , :System , rdfs:Resource , prov:Plan , prov:Entity ;
         rdfs:label                "System JGIRW6NC" ;
@@ -6039,15 +6061,24 @@ res:System_JGIRW6NC  rdf:type     p-plan:Entity , p-plan:Plan , :System , rdfs:R
         :hasVariableData1         res:Custom.JGIRW6NC.d1 ;
         :hasVariableSW1           res:Custom.JGIRW6NC.sw1 .
 
-res:Pattern.T19.SW4  rdf:type      :TemplateArtifactSW ;
-        opmw:isGeneratedBy         res:Pattern.T19.ML2 ;
-        opmw:isVariableOfTemplate  res:Pattern.T19 .
-
 res:Domain.Marketing  rdf:type  skos:Concept , rdfs:Resource , :ApplicationDomain , owl:NamedIndividual ;
         rdfs:label              "Marketing" ;
         skos:broader            res:Domain.Geography_Economics ;
         skos:broaderTransitive  res:Domain.Geography_Economics ;
         skos:semanticRelation   res:Domain.Geography_Economics .
+
+_:b3    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b3 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Activity ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:Agent ;
+                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                     rdf:first  prov:Entity ;
+                                                     rdf:rest   ()
+                                                   ]
+                                      ]
+                         ] .
 
 res:SRKZ3BX3.ML2  rdf:type            rdfs:Resource , :SystemComponent , :MachineLearningComponent , p-plan:Step ;
         rdfs:label                    "SRKZ3BX3-ML2 (Compound)" ;
@@ -6188,7 +6219,7 @@ prov:Generation  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:label            "Generation" ;
         rdfs:seeAlso          "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Generation"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Generation"^^xsd:anyURI ;
         rdfs:seeAlso          prov:wasGeneratedBy , <http://www.w3.org/ns/prov-o#> ;
-        rdfs:subClassOf       rdfs:Resource , _:b6 , prov:Influence , prov:Generation , prov:ActivityInfluence , prov:InstantaneousEvent ;
+        rdfs:subClassOf       _:b4 , rdfs:Resource , prov:Influence , prov:Generation , prov:ActivityInfluence , prov:InstantaneousEvent ;
         prov:category         "qualified" ;
         prov:component        "entities-activities" ;
         prov:constraints      "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
@@ -6395,6 +6426,22 @@ res:Resource.IDO  rdf:type     p-plan:Variable , :SemanticModel , :Symbol , rdfs
         :hasResourceSize       res:ResourceSize.Less_than_500 ;
         :hasResourceType       res:ResourceType.Ontology .
 
+_:b0    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b0 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Activity ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:Agent ;
+                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                     rdf:first  prov:Entity ;
+                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                                  rdf:first  prov:InstantaneousEvent ;
+                                                                  rdf:rest   ()
+                                                                ]
+                                                   ]
+                                      ]
+                         ] .
+
 res:NICVBB7G.ML1  rdf:type            :MachineLearningComponent , :SystemComponent , p-plan:Step , rdfs:Resource ;
         rdfs:label                    "NICVBB7G-ML1 (Genetic_Algorithms)" ;
         p-plan:hasInputVar            res:Custom.NICVBB7G.sw1 , res:Custom.NICVBB7G.d1 ;
@@ -6511,7 +6558,7 @@ opmw:hasDocumentation
         rdfs:comment  "Property that binds a workflow template to its documentation.\n\nExample:\n@prefix opmw: <http://www.opmw.org/ontology/> .\n<http://www.opmw.org/export/resource/WorkflowTemplate/AQUAFLOW_NTM>\n      a opmw:WorkflowTemplate;\n      opmw:hasDocumentation \"A copy of the documentation related to this template \"^^xsd:string."@en ;
         rdfs:domain   opmw:WorkflowTemplate ;
         rdfs:label    "has Documentation"@en ;
-        rdfs:range    _:b2 , _:b7 .
+        rdfs:range    _:b5 , _:b6 .
 
 res:Custom.C8FJAR59.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -6592,7 +6639,7 @@ res:System_ALVFL35G  rdf:type     prov:Entity , p-plan:Plan , p-plan:Entity , :S
 opmw:hasOriginalLogFile
         rdf:type      rdf:Property , rdfs:Resource , owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "Property used to link an execution account or a workflow execution process to the correspondent log file produced by the enacting workflow engine.\n\n\nExample:\n@prefix opmw: <http://www.opmw.org/ontology/> .\n@prefix opmo: <http://openprovenance.org/model/opmo#> .\n\n<http://www.opmw.org/export/resource/WorkflowExecutionAccount/ACCOUNT1335506667949>\n     a opmw:WorkflowExecutionAccount,opmo:Account;\n     opmw:hasOriginalLogFile \"http://wind.isi.edu/marbles/assets/components/workflow_portal/users/1/Water/runs/run_148.ttl\"^^sxd:anyURI."@en ;
-        rdfs:domain   _:b8 , _:b4 ;
+        rdfs:domain   _:b7 , _:b8 ;
         rdfs:label    "has Original Log File"@en ;
         rdfs:range    xsd:anyURI .
 
@@ -6772,16 +6819,13 @@ res:Custom.B2DUJ5NF.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-res:Pattern.O1.Data5  rdf:type     :TemplateArtifactData ;
-        opmw:isGeneratedBy         res:Pattern.O1.KR1 ;
-        opmw:isVariableOfTemplate  res:Pattern.O1 .
-
 res:Custom.CC6HQARX.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-vann:preferredNamespaceUri
-        rdf:type  owl:AnnotationProperty .
+res:Pattern.O1.Data5  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
 
 res:System_DZ6A87JZ  rdf:type     prov:Plan , rdfs:Resource , p-plan:Entity , p-plan:Plan , :System , prov:Entity ;
         rdfs:label                "System DZ6A87JZ" ;
@@ -6796,22 +6840,12 @@ res:System_DZ6A87JZ  rdf:type     prov:Plan , rdfs:Resource , p-plan:Entity , p-
         :hasVariableData2         res:Custom.DZ6A87JZ.d2 ;
         :hasVariableSW1           res:Custom.DZ6A87JZ.sw1 .
 
+vann:preferredNamespaceUri
+        rdf:type  owl:AnnotationProperty .
+
 res:Maturity.Missing_Info
         rdf:type    rdfs:Resource , :SystemMaturity , owl:NamedIndividual ;
         rdfs:label  "Missing Info" .
-
-_:b9    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b9 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Activity ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:Agent ;
-                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                     rdf:first  prov:Entity ;
-                                                     rdf:rest   ()
-                                                   ]
-                                      ]
-                         ] .
 
 res:Custom.Y7D2T6TB.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
@@ -6961,7 +6995,7 @@ res:86A98Y3D.ML1  rdf:type            :SystemComponent , p-plan:Step , rdfs:Reso
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.GAE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GAE [Graph Autoencoder]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -7212,7 +7246,7 @@ res:Custom.JPSJZZAU.d1
         rdfs:label  "JPSJZZAU Data-1" .
 
 res:StatisticalModel.RNN-GRU
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RNN-GRU" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -7408,6 +7442,19 @@ res:Custom.T6X6KGAZ.sw2
 
 terms:created  rdf:type  owl:AnnotationProperty .
 
+_:b9    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b9 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Activity ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:Agent ;
+                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                     rdf:first  prov:Entity ;
+                                                     rdf:rest   ()
+                                                   ]
+                                      ]
+                         ] .
+
 res:8FB94BUD.ML1  rdf:type            :MachineLearningComponent , rdfs:Resource , p-plan:Step , :SystemComponent ;
         rdfs:label                    "8FB94BUD-ML1 (Compound)" ;
         p-plan:hasInputVar            res:Custom.8FB94BUD.sw2 ;
@@ -7455,7 +7502,7 @@ res:N3HSCVDH.ML1  rdf:type            :SystemComponent , p-plan:Step , :MachineL
         :hasCorrespondingPatternStep  res:Pattern.A3.ML1 .
 
 res:StatisticalModel.RESCAL
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RESCAL" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -7682,7 +7729,7 @@ res:Pattern.T20.SW2  rdf:type      :TemplateArtifactSW ;
         opmw:isVariableOfTemplate  res:Pattern.T20 .
 
 res:StatisticalModel.Attentive_BiGRU
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Attentive BiGRU" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -7856,7 +7903,7 @@ res:A3M3KJVB.ML2  rdf:type            :MachineLearningComponent , :SystemCompone
         :hasCorrespondingPatternStep  res:Pattern.I6.ML2 .
 
 res:StatisticalModel.Doc2Vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Doc2Vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -7923,7 +7970,7 @@ res:Pattern.F4.ML1  rdf:type   :WorkflowTemplateProcessML , opmw:WorkflowTemplat
         opmw:uses              res:Pattern.F4.SW1 , res:Pattern.F4.SW2 .
 
 res:StatisticalModel.BiLSTM-CRF
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "BiLSTM-CRF" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -8381,7 +8428,7 @@ res:Pattern.F1.SW1  rdf:type       :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.F1 .
 
 res:StatisticalModel.DKRL
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DKRL" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -8516,22 +8563,6 @@ res:Custom.9T92Z5QV.d2
 res:Custom.4FYTY5MI.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
-
-_:b0    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b0 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Activity ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:Agent ;
-                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                     rdf:first  prov:Entity ;
-                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                                  rdf:first  prov:InstantaneousEvent ;
-                                                                  rdf:rest   ()
-                                                                ]
-                                                   ]
-                                      ]
-                         ] .
 
 res:Custom.C7R425PZ.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -8696,14 +8727,14 @@ res:Resource.and_SW_428dcfa8-9a66-4ddc-819b-8251978cc4e9
         skos:semanticRelation   res:Task.Other_Tasks .
 
 res:StatisticalModel.MCAN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "MCAN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
 
 res:StatisticalModel.RSN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RSN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -8729,7 +8760,7 @@ res:Resource.NELL186  rdf:type  :Symbol , p-plan:Variable , owl:NamedIndividual 
         :hasResourceType        res:ResourceType.Knowledge_Graph .
 
 res:StatisticalModel.AutoEncoder
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "AutoEncoder" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -8803,7 +8834,7 @@ prov:Communication  rdf:type  rdfs:Resource , rdfs:Class , owl:Class ;
         rdfs:label            "Communication" ;
         rdfs:seeAlso          "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Communication"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-wasInformedBy"^^xsd:anyURI ;
         rdfs:seeAlso          <http://www.w3.org/ns/prov-o#> , prov:wasInformedBy ;
-        rdfs:subClassOf       rdfs:Resource , prov:ActivityInfluence , prov:Influence , _:b6 , prov:Communication ;
+        rdfs:subClassOf       _:b4 , rdfs:Resource , prov:ActivityInfluence , prov:Influence , prov:Communication ;
         prov:category         "qualified" ;
         prov:component        "entities-activities" ;
         prov:constraints      "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
@@ -9235,7 +9266,7 @@ prov:wasAssociatedWith
         prov:qualifiedForm      prov:Association , prov:qualifiedAssociation .
 
 res:StatisticalModel.JOIE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "JOIE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -9270,14 +9301,14 @@ res:Custom.PUBUTUFK.d1
         rdfs:label  "PUBUTUFK Data-1" .
 
 res:StatisticalModel.Mixture_Models
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GMM [Gaussian Mixture Model, Mixture Models]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
         skos:semanticRelation   res:StatisticalModel.ClassicalML .
 
 res:StatisticalModel.BERT
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "BERT" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -9351,7 +9382,7 @@ res:Task.OCR_Conversion_Error_Rules_Prediction
         skos:semanticRelation   res:Task.Image_Video_processing .
 
 res:StatisticalModel.InfoMap
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "InfoMap" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -9469,7 +9500,7 @@ res:Custom.X74VFF5G.d1
         rdfs:label  "X74VFF5G Data-1" .
 
 res:StatisticalModel.Topic_Models
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Topic Models" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -9545,7 +9576,7 @@ ns:wasDerivedFrom  rdf:type  rdf:Property , rdfs:Resource ;
         rdfs:subPropertyOf  ns:wasDerivedFrom .
 
 res:StatisticalModel.ConvE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ConvE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -9732,15 +9763,6 @@ res:Resource.FB15k  rdf:type    :Symbol , owl:NamedIndividual , skos:Concept , p
         :hasResourceSize        res:ResourceSize.100K_500K ;
         :hasResourceType        res:ResourceType.Knowledge_Graph .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en ;
-  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection" ;
-  owl:annotatedProperty  rdfs:range ;
-  owl:annotatedSource    prov:hadMember ;
-  owl:annotatedTarget    prov:Entity ;
-  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection"
-] .
-
 res:Custom.FXJSL4ZL.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "FXJSL4ZL Data-1" .
@@ -9786,19 +9808,6 @@ res:Custom.E794VKK9.sw1
 res:Custom.6RCPKJ68.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "6RCPKJ68 Data-1" .
-
-_:b10   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b10 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Activity ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:Agent ;
-                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                     rdf:first  prov:Entity ;
-                                                     rdf:rest   ()
-                                                   ]
-                                      ]
-                         ] .
 
 res:StatisticalModel.and_ML_ce40d925-aa03-42ff-8f71-2e1e199cec8b
         rdf:type             :Model , rdfs:Resource , :StatisticalModel , :AndCompound ;
@@ -9903,7 +9912,7 @@ res:System_HE6AKQEY  rdf:type     p-plan:Plan , :System , rdfs:Resource , prov:E
         :hasVariableSW2           res:Custom.HE6AKQEY.sw2 .
 
 res:StatisticalModel.Faster_RCNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Faster RCNN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -10063,7 +10072,7 @@ res:Pattern.Y3  rdf:type  opmw:WorklowTemplate , :Pattern , rdfs:Resource , :Y-P
         skos:altLabel  "OB-4" .
 
 res:StatisticalModel.Genetic_Algorithms
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Genetic Algorithms [Evolutionary Algorithms]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -10214,7 +10223,7 @@ res:Custom.4DVAAPQJ.sw1
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.HolE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "HolE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -10388,6 +10397,15 @@ res:Custom.FJWPTVPL.d3
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "FJWPTVPL Data-3" .
 
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en ;
+  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection" ;
+  owl:annotatedProperty  rdfs:range ;
+  owl:annotatedSource    prov:hadMember ;
+  owl:annotatedTarget    prov:Entity ;
+  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection"
+] .
+
 res:TrainingType.Distant_supervised
         rdf:type    rdfs:Resource , :TrainingType , owl:NamedIndividual ;
         rdfs:label  "Distant-supervised" .
@@ -10412,7 +10430,7 @@ res:System_8XZS6PPX  rdf:type     prov:Plan , rdfs:Resource , p-plan:Entity , :S
 :T-Pattern  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Advanded pattern type: a chain of Atomic and Fusion Patterns" ;
         rdfs:label       "T-Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :T-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :T-Pattern , :Pattern .
 
 res:Custom.4AHUB67U.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
@@ -10568,7 +10586,7 @@ res:Custom.6V4IZJ6H.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.GHSOM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GHSOM [Growing Hierarchical Self Organizing Map]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -10787,14 +10805,14 @@ opmw:hasStatus  rdf:type  rdf:Property , rdfs:Resource , owl:FunctionalProperty 
         rdfs:range    xsd:string .
 
 res:StatisticalModel.SENN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SENN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
 
 res:StatisticalModel.LSTM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Custom LSTM model" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -10924,6 +10942,16 @@ res:StatisticalModel.and_ML_2ca8a9c9-69de-4077-b782-f018536abec9
 res:Custom.A75ZRBKG.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "A75ZRBKG Data-1" .
+
+_:b10   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b10 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  skos:Concept ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  skos:Collection ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
 
 res:23I2SC9Y.ML1  rdf:type            :SystemComponent , :MachineLearningComponent , p-plan:Step , rdfs:Resource ;
         rdfs:label                    "23I2SC9Y-ML1 (FFNN)" ;
@@ -11309,7 +11337,7 @@ res:Resource.NHC_ontology
         :hasResourceType       res:ResourceType.Ontology .
 
 res:StatisticalModel.ProjE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ProjE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -11390,16 +11418,6 @@ res:System_MR5D9PCP  rdf:type     p-plan:Entity , prov:Entity , rdfs:Resource , 
 res:Pattern.T5.SW3  rdf:type       :TemplateArtifactSW ;
         opmw:isGeneratedBy         res:Pattern.T5.KR1 ;
         opmw:isVariableOfTemplate  res:Pattern.T5 .
-
-_:b1    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b1 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Association ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:InstantaneousEvent ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 res:EE7ZGG2P.ML1  rdf:type            rdfs:Resource , p-plan:Step , :SystemComponent , :MachineLearningComponent ;
         rdfs:label                    "EE7ZGG2P-ML1 (TransX)" ;
@@ -11520,7 +11538,7 @@ res:P3HR4MVG.ML1  rdf:type            p-plan:Step , rdfs:Resource , :MachineLear
         :hasCorrespondingPatternStep  res:Pattern.I1.ML1 .
 
 res:StatisticalModel.Policy_Network
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Policy Network" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -11818,7 +11836,7 @@ p-plan:isOutputVarOf  rdf:type  owl:ObjectProperty , owl:FunctionalProperty , rd
         prov:definition     "p-plan:isOutputVarOf is intended to link an output variable of a step to the step."@en .
 
 res:StatisticalModel.Flair
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Flair [Flair Embeddings]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -11832,7 +11850,7 @@ res:ProcessingEngine.SPARQL
         rdf:type  :ProcessingEngine , rdfs:Resource .
 
 res:StatisticalModel.GCN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GCN [Graph Convolutional Network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -12575,7 +12593,7 @@ res:Custom.BTYELBC3.d2
         rdfs:label  "BTYELBC3 Data-2" .
 
 res:StatisticalModel.Electra
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Electra" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -12593,7 +12611,7 @@ res:Custom.XX2LCGSK.d1
         rdfs:label  "XX2LCGSK Data-1" .
 
 res:StatisticalModel.ALBERT
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ALBERT" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -12732,16 +12750,6 @@ res:W4H3Q277.ML1  rdf:type            :SystemComponent , :MachineLearningCompone
         rdfs:range          :Symbol ;
         rdfs:subPropertyOf  :hasSystemIO , :hasVariableSW1 , :hasSymbolIO .
 
-_:b11   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b11 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  skos:Concept ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  skos:Collection ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
-
 res:Custom.YGIB2UKR.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "YGIB2UKR Data-1" .
@@ -12827,6 +12835,11 @@ opmw:hasFileName  rdf:type  rdf:Property , rdfs:Resource , owl:FunctionalPropert
         rdfs:label    "has File Name"@en ;
         rdfs:range    xsd:string .
 
+_:b4    rdf:type            rdfs:Class , rdfs:Resource , owl:Restriction ;
+        rdfs:subClassOf     _:b4 ;
+        owl:maxCardinality  "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty      prov:hadActivity .
+
 res:Custom.GPS3JFBQ.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
@@ -12885,7 +12898,7 @@ res:Custom.TU449JJP.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.LSA
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "LSA [Latent Semantic Analysis]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -12904,6 +12917,11 @@ res:Resource.and_SW_208022fe-a6ce-4b5c-8c80-46fd10cddeb7
         rdf:type             p-plan:Variable , rdfs:Resource , :Instance , :Model , :SemanticWebResource , :SemanticModel , :Symbol , :AndCompound ;
         rdfs:label           "Compound" ;
         :hasCompoundElement  res:Resource.DBpedia , res:Resource.Wikidata .
+
+res:Pattern.T16.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T16.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T16 .
 
 :Instance  rdf:type      rdfs:Resource , owl:Class , rdfs:Class ;
         rdfs:label       "Instance" ;
@@ -12926,11 +12944,6 @@ res:Resource.WN18  rdf:type     :Model , owl:NamedIndividual , rdfs:Resource , p
         skos:semanticRelation   res:Resource.WordNet ;
         :hasResourceSize        res:ResourceSize.10K_100K ;
         :hasResourceType        res:ResourceType.Thesaurus .
-
-res:Pattern.T16.Data2
-        rdf:type                   :TemplateArtifactData ;
-        opmw:isGeneratedBy         res:Pattern.T16.ML1 ;
-        opmw:isVariableOfTemplate  res:Pattern.T16 .
 
 res:Custom.ELSWNE5X.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -12979,7 +12992,7 @@ res:Pattern.I1.ML2  rdf:type   :WorkflowTemplateProcessML , opmw:WorkflowTemplat
         opmw:uses              res:Pattern.I1.SW1 .
 
 res:StatisticalModel.M5Rules
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "M5Rules" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -13195,7 +13208,7 @@ res:CICLKFDY.ML1  rdf:type            p-plan:Step , :MachineLearningComponent , 
         :hasCorrespondingPatternStep  res:Pattern.A1.ML1 .
 
 res:StatisticalModel.ILP
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ILP [Inductive Logic Programming]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -13258,7 +13271,7 @@ opmw:overallStartTime
         rdfs:range    xsd:dateTime .
 
 res:StatisticalModel.ConceptNet_PPMI_embeddings
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ConceptNet PPMI embeddings" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -13281,7 +13294,7 @@ res:Custom.ZSJ4GFSJ.sw2
 :Fusion-Pattern  rdf:type  rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Basic pattern type: a single algorithmic module consumes more than one input" ;
         rdfs:label       "Fusion Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :Fusion-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :Fusion-Pattern , :Pattern .
 
 res:Custom.4AHUB67U.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -13369,12 +13382,6 @@ res:System_AF37AQYV  rdf:type     prov:Plan , :System , p-plan:Plan , prov:Entit
         :hasVariableSW1           res:Resource.Missing_Info ;
         :hasVariableSW2           res:Custom.AF37AQYV.sw2 .
 
-:hasArea  rdf:type    rdf:Property , rdfs:Resource , owl:ObjectProperty ;
-        rdfs:comment  "Linking a SWeML system with a research area it is associated with" ;
-        rdfs:domain   :System ;
-        rdfs:label    "has area" ;
-        rdfs:range    :Area .
-
 res:System_ECX4H3Q2  rdf:type     prov:Plan , prov:Entity , p-plan:Entity , rdfs:Resource , :System , p-plan:Plan ;
         rdfs:label                "System ECX4H3Q2" ;
         :hasCorrespondingPattern  res:Pattern.F1 ;
@@ -13387,6 +13394,12 @@ res:System_ECX4H3Q2  rdf:type     prov:Plan , prov:Entity , p-plan:Entity , rdfs
         :hasVariableData1         res:Custom.ECX4H3Q2.d1 ;
         :hasVariableData2         res:Custom.ECX4H3Q2.d2 ;
         :hasVariableSW1           res:Resource.DBpedia .
+
+:hasArea  rdf:type    rdf:Property , rdfs:Resource , owl:ObjectProperty ;
+        rdfs:comment  "Linking a SWeML system with a research area it is associated with" ;
+        rdfs:domain   :System ;
+        rdfs:label    "has area" ;
+        rdfs:range    :Area .
 
 res:Resource.ICEWS_14
         rdf:type          p-plan:Variable , :SemanticWebResource , rdfs:Resource , :Instance , owl:NamedIndividual , :Symbol , :SemanticModel , :Model ;
@@ -13493,7 +13506,7 @@ res:Custom.JGIRW6NC.sw1
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.NTN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "NTN [Neural Tensor Network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -13522,7 +13535,7 @@ res:Custom.7I55DSU5.d1
         rdfs:label  "7I55DSU5 Data-1" .
 
 res:StatisticalModel.BiGRU
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "BiGRU" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -13762,7 +13775,7 @@ prov:Invalidation  rdf:type   rdfs:Class , owl:Class , rdfs:Resource ;
         rdfs:label            "Invalidation" ;
         rdfs:seeAlso          "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Invalidation"^^xsd:anyURI , "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Invalidation"^^xsd:anyURI ;
         rdfs:seeAlso          <http://www.w3.org/ns/prov-o#> , prov:wasInvalidatedBy ;
-        rdfs:subClassOf       prov:Influence , prov:Invalidation , _:b6 , prov:InstantaneousEvent , prov:ActivityInfluence , rdfs:Resource ;
+        rdfs:subClassOf       prov:Influence , prov:Invalidation , _:b4 , prov:InstantaneousEvent , prov:ActivityInfluence , rdfs:Resource ;
         prov:category         "qualified" ;
         prov:component        "entities-activities" ;
         prov:constraints      "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
@@ -13829,6 +13842,16 @@ res:Resource.Google_Knowledge_Graph
         :hasResourceSize  res:ResourceSize.More_than_1M ;
         :hasResourceType  res:ResourceType.Knowledge_Graph .
 
+_:b6    rdf:type         rdfs:Resource , rdfs:Datatype , rdfs:Class ;
+        rdfs:subClassOf  _:b6 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  xsd:anyURI ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  xsd:string ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
+
 res:Custom.TL9ULEGF.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
@@ -13876,7 +13899,7 @@ res:6EFNU3FT.ML2  rdf:type  p-plan:Step , :SystemComponent , rdfs:Resource , :Ma
         rdfs:label       "6EFNU3FT-ML2 (Compound)" ;
         :componentModel  res:StatisticalModel.and_ML_5e9a5f0d-3c0e-4a0f-bec3-dc870191ad86 .
 
-res:Resource.DBpedia  rdf:type  skos:Concept , :Symbol , p-plan:Variable , :Instance , owl:NamedIndividual , :SemanticModel , :Model , rdfs:Resource , :SemanticWebResource ;
+res:Resource.DBpedia  rdf:type  skos:Concept , :Symbol , :Instance , p-plan:Variable , owl:NamedIndividual , :SemanticModel , :Model , rdfs:Resource , :SemanticWebResource ;
         rdfs:label             "DBpedia" ;
         rdfs:seeAlso           <https://www.dbpedia.org/about/> ;
         :hasResourceFormalism  res:ResourceFormalism.RDF ;
@@ -13928,7 +13951,7 @@ res:System_YGIB2UKR  rdf:type     p-plan:Entity , prov:Entity , prov:Plan , :Sys
         :hasVariableSW1           res:Custom.YGIB2UKR.sw1 .
 
 res:StatisticalModel.DRE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DRE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -13970,7 +13993,7 @@ prov:editorsDefinition
 :X-Pattern  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "" ;
         rdfs:label       "X-Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :X-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :X-Pattern , :Pattern .
 
 p-plan:isStepOfPlan  rdf:type  rdfs:Resource , owl:ObjectProperty , rdf:Property ;
         rdfs:domain         p-plan:Step ;
@@ -14019,16 +14042,6 @@ res:System_E6LABBBS  rdf:type     rdfs:Resource , prov:Entity , p-plan:Plan , :S
 res:Custom.QMNJ94NK.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
-
-_:b7    rdf:type         rdfs:Resource , rdfs:Datatype , rdfs:Class ;
-        rdfs:subClassOf  _:b7 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  xsd:anyURI ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  xsd:string ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 res:Custom.HUS3CVRH.d4
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -14152,7 +14165,7 @@ res:StatisticalModel.or_ML_c8324095-8789-49a0-95a9-5f67c02568d7
         rdfs:label  "Scotland" .
 
 res:StatisticalModel.ResNet101
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ResNet101" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -14172,7 +14185,7 @@ res:NDSREKSE.ML1  rdf:type            :SystemComponent , :MachineLearningCompone
         :hasCorrespondingPatternStep  res:Pattern.I1.ML1 .
 
 res:StatisticalModel.Poincare_Embeddings
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Poincare Embeddings" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -14225,7 +14238,7 @@ res:StatisticalModel.Missing_Info
         rdf:type  :Model , rdfs:Resource .
 
 res:StatisticalModel.XLM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "XLM" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -14304,12 +14317,42 @@ res:System_77ZSBK78  rdf:type     :System , prov:Plan , rdfs:Resource , p-plan:E
         :hasVariableSW1           res:Resource.or_SW_3897ef0c-dafa-4a02-8ade-42e091f14c2a ;
         :hasVariableSW2           res:Custom.77ZSBK78.sw2 .
 
+[ rdf:type               owl:Axiom ;
+  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence" ;
+  owl:annotatedProperty  rdfs:domain ;
+  owl:annotatedSource    prov:wasInfluencedBy ;
+  owl:annotatedTarget    [ rdf:type     owl:Class ;
+                           owl:unionOf  [ rdf:type   rdf:List , rdfs:Resource ;
+                                          rdf:first  prov:Activity ;
+                                          rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                       rdf:first  prov:Agent ;
+                                                       rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                                    rdf:first  prov:Entity ;
+                                                                    rdf:rest   ()
+                                                                  ]
+                                                     ]
+                                        ]
+                         ] ;
+  prov:definition        "influencee: an identifier (o2) for an entity, activity, or agent; " ;
+  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"
+] .
+
 res:Task.Data_Augmentation
         rdf:type                skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
         rdfs:label              "Data Augmentation" ;
         skos:broader            res:Task.Other_Tasks ;
         skos:broaderTransitive  res:Task.Other_Tasks ;
         skos:semanticRelation   res:Task.Other_Tasks .
+
+_:b5    rdf:type         rdfs:Resource , rdfs:Datatype , rdfs:Class ;
+        rdfs:subClassOf  _:b5 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  xsd:anyURI ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  xsd:string ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
 
 :Pakistan  rdf:type  rdfs:Resource , :Country , owl:NamedIndividual ;
         rdfs:label  "Pakistan" .
@@ -14377,7 +14420,7 @@ res:Custom.VYWK5ZXL.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.TCE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "TCE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -14677,7 +14720,7 @@ res:Resource.UMLS  rdf:type    p-plan:Variable , owl:NamedIndividual , :Instance
         :hasResourceType       res:ResourceType.Ontology .
 
 res:StatisticalModel.SVD
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SVD [Singular Value Decomposition]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -14807,7 +14850,7 @@ res:KBXZASME.ML2  rdf:type            rdfs:Resource , :SystemComponent , p-plan:
         :hasCorrespondingPatternStep  res:Pattern.Y2.ML2 .
 
 res:StatisticalModel.SDNE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "SDNE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -14980,6 +15023,13 @@ res:System_DRZHIB2W  rdf:type     rdfs:Resource , p-plan:Plan , :System , p-plan
         :hasVariableSW1           res:Resource.Missing_Info ;
         :hasVariableSW2           res:Custom.DRZHIB2W.sw2 .
 
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence." ;
+  owl:annotatedProperty  rdfs:subPropertyOf ;
+  owl:annotatedSource    prov:wasDerivedFrom ;
+  owl:annotatedTarget    prov:wasInfluencedBy
+] .
+
 opmw:hasNativeSystemTemplate
         rdf:type      rdf:Property , rdfs:Resource , owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:comment  "Property used to link a workflow template to its native template (encoded in the syntax of the workflow system where it was designed: scufl, owl, etc.).\n\nExample:\n@prefix opmw: <http://www.opmw.org/ontology/> .\n\n<http://www.opmw.org/export/resource/WorkflowTemplate/AQUAFLOW_NTM>\n     a opmw:WorkflowTemplate;\n     opmw:hasNativeSystemTemplate \"http://wind.isi.edu/marbles/assets/components/workflow_portal/users/1/Water/ontology/Water/AquaFlow_NTM.owl\"xsd:anyURI."@en ;
@@ -14992,7 +15042,7 @@ res:Custom.6BC4YPRR.d2
         rdfs:label  "6BC4YPRR Data-2" .
 
 res:StatisticalModel.Order_Embeddings
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Order Embeddings" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -15856,6 +15906,16 @@ res:Custom.BXF5VPLL.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
+_:b8    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b8 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  opmw:WorkflowExecutionAccount ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  opmw:WorkflowExecutionProcess ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
+
 skos:hiddenLabel  rdf:type  owl:AnnotationProperty , rdfs:Resource , rdf:Property ;
         rdfs:comment        "The range of skos:hiddenLabel is the class of RDF plain literals."@en , "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties."@en ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
@@ -15901,7 +15961,7 @@ res:Custom.VQPITS6Q.d3
         rdfs:label  "VQPITS6Q Data-3" .
 
 <http://www.w3.org/ns/prov-o#>
-        rdf:type               owl:Ontology , _:b9 , prov:Entity , rdfs:Resource ;
+        rdf:type               _:b9 , owl:Ontology , prov:Entity , rdfs:Resource ;
         rdfs:comment           "This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page). \n\nIf you wish to make comments regarding this document, please send them to public-prov-comments@w3.org (subscribe public-prov-comments-request@w3.org, archives http://lists.w3.org/Archives/Public/public-prov-comments/). All feedback is welcome."@en ;
         rdfs:label             "W3C PROVenance Interchange Ontology (PROV-O)"@en ;
         rdfs:seeAlso           <http://www.w3.org/TR/prov-o/> , <http://www.w3.org/ns/prov> ;
@@ -16081,7 +16141,7 @@ res:Custom.BJ75KZI4.d1
         rdfs:label  "BJ75KZI4 Data-1" .
 
 res:StatisticalModel.Vector_Symbolic_Architectures
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Vector Symbolic Architectures" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -16335,13 +16395,6 @@ res:ZJKDXA43.ML1  rdf:type            rdfs:Resource , p-plan:Step , :SystemCompo
         :componentOutput              res:Custom.ZJKDXA43.d2 ;
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence." ;
-  owl:annotatedProperty  rdfs:subPropertyOf ;
-  owl:annotatedSource    prov:wasDerivedFrom ;
-  owl:annotatedTarget    prov:wasInfluencedBy
-] .
-
 res:Custom.TU449JJP.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "TU449JJP Data-1" .
@@ -16368,7 +16421,7 @@ res:G65GETVX.ML2  rdf:type            rdfs:Resource , p-plan:Step , :SystemCompo
         :hasCorrespondingPatternStep  res:Pattern.I2.ML2 .
 
 res:StatisticalModel.FastText
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "FastText" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -16411,7 +16464,7 @@ res:Custom.ZHPMAWKJ.d1
         rdfs:label  "ZHPMAWKJ Data-1" .
 
 res:StatisticalModel.GloVe
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GloVe" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -16534,7 +16587,7 @@ res:Custom.FIB7DDT2.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.CNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "CNN [Convolutional neural network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -16615,7 +16668,7 @@ res:T6R5SAUW.ML2  rdf:type            rdfs:Resource , :SystemComponent , :Machin
         :hasCorrespondingPatternStep  res:Pattern.Y1.ML2 .
 
 res:StatisticalModel.LINE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "LINE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -16766,10 +16819,6 @@ res:Custom.A93THUKU.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "A93THUKU Data-2" .
 
-res:Pattern.T18.SW2  rdf:type      :TemplateArtifactSW ;
-        opmw:isGeneratedBy         res:Pattern.T18.ML1 ;
-        opmw:isVariableOfTemplate  res:Pattern.T18 .
-
 res:SLHWYIEJ.ML1  rdf:type            p-plan:Step , :MachineLearningComponent , rdfs:Resource , :SystemComponent ;
         rdfs:label                    "SLHWYIEJ-ML1 (w2v)" ;
         p-plan:hasInputVar            res:Resource.MusicBrainz , res:Custom.SLHWYIEJ.d1 ;
@@ -16778,6 +16827,10 @@ res:SLHWYIEJ.ML1  rdf:type            p-plan:Step , :MachineLearningComponent , 
         :componentModel               res:StatisticalModel.w2v ;
         :componentOutput              res:Custom.SLHWYIEJ.d2 ;
         :hasCorrespondingPatternStep  res:Pattern.T2.ML1 .
+
+res:Pattern.T18.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T18.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T18 .
 
 res:Task.Drug_repurposing
         rdf:type                skos:Concept , rdfs:Resource , :Task , owl:NamedIndividual ;
@@ -16902,7 +16955,7 @@ res:System_Q8XXMGQ9  rdf:type     p-plan:Plan , prov:Entity , :System , p-plan:E
         :hasVariableSW2           res:Custom.Q8XXMGQ9.sw2 .
 
 res:StatisticalModel.Hierarchical_Attention_Network
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Hierarchical Attention Network HAN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -16976,7 +17029,7 @@ res:Custom.MJWIXKMT.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.TARE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "TARE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -17104,7 +17157,7 @@ res:Custom.NZQYJ7IK.d1
         rdfs:label  "NZQYJ7IK Data-1" .
 
 res:StatisticalModel.CRF
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "CRF [Conditional Random Field]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -17120,7 +17173,7 @@ res:YKV8CYZA.ML1  rdf:type            :MachineLearningComponent , rdfs:Resource 
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.Rule_Learning
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Rule Learning" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -17453,7 +17506,7 @@ res:9LK2LXRA.ML3  rdf:type            :MachineLearningComponent , :SystemCompone
         :hasCorrespondingPatternStep  res:Pattern.Y1.ML3 .
 
 res:StatisticalModel.Node2vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Node2vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -17560,7 +17613,7 @@ res:ResourceType.Linked_Dataset
         rdfs:label  "Linked Dataset" .
 
 res:StatisticalModel.PCNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "PCNN [Piecewise-CNN]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -17724,6 +17777,16 @@ res:Resource.package_slip_Knowledge_Graph
         :hasResourceSize       res:ResourceSize.100K_500K ;
         :hasResourceType       res:ResourceType.Dataset .
 
+_:b7    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b7 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  opmw:WorkflowExecutionAccount ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  opmw:WorkflowExecutionProcess ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
+
 res:Resource.or_SW_da3cf04a-661f-4098-ba8d-627b88a417e1
         rdf:type             :SemanticModel , :Symbol , :SemanticWebResource , :Model , :OrCompound , p-plan:Variable , rdfs:Resource , :Instance ;
         rdfs:label           "Compound" ;
@@ -17757,7 +17820,7 @@ res:System_5SW2YPJK  rdf:type     prov:Entity , rdfs:Resource , p-plan:Entity , 
         :hasVariableSW3           res:Custom.5SW2YPJK.sw3 .
 
 res:StatisticalModel.GRAM-KGE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GRAM-KGE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -17767,7 +17830,7 @@ skos:member  rdf:type       rdfs:Resource , rdf:Property , owl:ObjectProperty ;
         rdfs:domain         skos:Collection ;
         rdfs:isDefinedBy    <http://www.w3.org/2004/02/skos/core> ;
         rdfs:label          "has member"@en ;
-        rdfs:range          _:b11 , _:b12 ;
+        rdfs:range          _:b11 , _:b10 ;
         rdfs:seeAlso        <http://www.w3.org/2004/02/skos/core> ;
         rdfs:subPropertyOf  skos:member ;
         skos:definition     "Relates a collection to one of its members."@en ;
@@ -17796,7 +17859,7 @@ res:Pattern.T2.SW1  rdf:type       :TemplateArtifactSW ;
         opmw:isVariableOfTemplate  res:Pattern.T2 .
 
 res:StatisticalModel.ANALOGY
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ANALOGY" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -17921,26 +17984,6 @@ res:Custom.MN3B8YLU.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence" ;
-  owl:annotatedProperty  rdfs:range ;
-  owl:annotatedSource    prov:wasInfluencedBy ;
-  owl:annotatedTarget    [ rdf:type     owl:Class ;
-                           owl:unionOf  [ rdf:type   rdf:List , rdfs:Resource ;
-                                          rdf:first  prov:Activity ;
-                                          rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                       rdf:first  prov:Agent ;
-                                                       rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                                    rdf:first  prov:Entity ;
-                                                                    rdf:rest   ()
-                                                                  ]
-                                                     ]
-                                        ]
-                         ] ;
-  prov:definition        "influencer: an identifier (o1) for an ancestor entity, activity, or agent that the former depends on;" ;
-  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"
-] .
-
 res:Custom.83F4I3G6.d3
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "83F4I3G6 Data-3" .
@@ -18012,7 +18055,7 @@ res:Custom.W6TQ2VML.sw2
         rdfs:subPropertyOf  :hasSystemIO , :hasVariableSW4 , :hasSymbolIO .
 
 res:StatisticalModel.Louvain
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Louvain" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -18167,10 +18210,6 @@ res:Custom.KQI8KIKA.sw4
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
 
-res:ResourceFormalism.TSV
-        rdf:type    rdfs:Resource , :ResourceFormalism , owl:NamedIndividual ;
-        rdfs:label  "TSV" .
-
 res:8FHAYRD4.ML1  rdf:type            rdfs:Resource , :SystemComponent , p-plan:Step , :MachineLearningComponent ;
         rdfs:label                    "8FHAYRD4-ML1 (Compound)" ;
         p-plan:hasInputVar            res:Custom.8FHAYRD4.d1 ;
@@ -18179,6 +18218,10 @@ res:8FHAYRD4.ML1  rdf:type            rdfs:Resource , :SystemComponent , p-plan:
         :componentModel               res:StatisticalModel.and_ML_ec0aba7d-264e-4826-8de9-494f2482f064 ;
         :componentOutput              res:Custom.8FHAYRD4.sw1 ;
         :hasCorrespondingPatternStep  res:Pattern.A2.ML1 .
+
+res:ResourceFormalism.TSV
+        rdf:type    rdfs:Resource , :ResourceFormalism , owl:NamedIndividual ;
+        rdfs:label  "TSV" .
 
 :Country  rdf:type       rdfs:Resource , owl:Class , rdfs:Class ;
         rdfs:comment     "Country to which authors describing the SWeML systems in their paper are affiliated to" ;
@@ -18228,7 +18271,7 @@ prov:ActivityInfluence
         rdfs:isDefinedBy        <http://www.w3.org/ns/prov-o#> ;
         rdfs:label              "ActivityInfluence" ;
         rdfs:seeAlso            prov:activity , <http://www.w3.org/ns/prov-o#> ;
-        rdfs:subClassOf         prov:ActivityInfluence , prov:Influence , rdfs:Resource , _:b6 ;
+        rdfs:subClassOf         prov:ActivityInfluence , _:b4 , prov:Influence , rdfs:Resource ;
         owl:disjointWith        prov:EntityInfluence ;
         prov:category           "qualified" ;
         prov:definition         "ActivitiyInfluence is the capacity of an activity to have an effect on the character, development, or behavior of another by means of generation, invalidation, communication, or other."@en ;
@@ -18469,6 +18512,16 @@ res:8GTHLHRT.ML1  rdf:type            :MachineLearningComponent , :SystemCompone
         :componentOutput              res:Custom.8GTHLHRT.sw2 ;
         :hasCorrespondingPatternStep  res:Pattern.A1.ML1 .
 
+_:b11   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b11 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  skos:Collection ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  skos:Concept ;
+                                        rdf:rest   ()
+                                      ]
+                         ] .
+
 res:Custom.58Y46ICB.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "58Y46ICB Data-1" .
@@ -18637,7 +18690,7 @@ res:Pattern.I1.Data1  rdf:type     :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.I1 .
 
 res:StatisticalModel.RKGE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RKGE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -18677,7 +18730,7 @@ res:GSAJX4SF.ML1  rdf:type            :MachineLearningComponent , :SystemCompone
         :hasCorrespondingPatternStep  res:Pattern.I1.ML1 .
 
 res:StatisticalModel.Transformer
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Transformer" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -18926,7 +18979,7 @@ res:Resource.and_SW_9f0bca8c-e786-48a9-9a75-1039073c6634
         :hasCompoundElement  res:Resource.REX , res:Resource.Chemical_Complex_ontology .
 
 res:StatisticalModel.ClassicalML
-        rdf:type    :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type    skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label  "Classical ML model" .
 
 res:Custom.42G8EYX5.sw2
@@ -19100,7 +19153,7 @@ res:FXJSL4ZL.ML1  rdf:type            :MachineLearningComponent , rdfs:Resource 
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
 res:StatisticalModel.DeepWalk
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DeepWalk" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19202,7 +19255,7 @@ res:Custom.FIB7DDT2.d1
         rdfs:label  "FIB7DDT2 Data-1" .
 
 res:StatisticalModel.GPT
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GPT [GPT-2]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19313,7 +19366,7 @@ res:System_3D4HSVPW  rdf:type     :System , prov:Entity , p-plan:Plan , rdfs:Res
         :hasVariableSW2           res:Custom.3D4HSVPW.sw2 .
 
 res:StatisticalModel.Sentence2Vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Sentence2Vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19395,7 +19448,7 @@ res:MN3B8YLU.ML1  rdf:type            rdfs:Resource , :SystemComponent , p-plan:
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.ELMo
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ELMo" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19551,7 +19604,7 @@ res:Custom.HUS3CVRH.d2
         rdfs:label  "HUS3CVRH Data-2" .
 
 res:StatisticalModel.Hierarchical_Clustering
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Hierarchical Clustering" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -19672,7 +19725,7 @@ res:Custom.or_SW_ace8d494-eaca-4a68-a240-d98084f26b8c.sw2
         rdf:type  :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource .
 
 res:StatisticalModel.Attention
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Attention" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19701,19 +19754,6 @@ prov:qualifiedAttribution
         prov:inverse               "qualifiedAttributionOf" ;
         prov:sharesDefinitionWith  prov:Attribution ;
         prov:unqualifiedForm       prov:wasAttributedTo .
-
-_:b3    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b3 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  prov:Activity ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  prov:Agent ;
-                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                     rdf:first  prov:Entity ;
-                                                     rdf:rest   ()
-                                                   ]
-                                      ]
-                         ] .
 
 res:Pattern.Y2.ML3  rdf:type   owl:Thing , :WorkflowTemplateProcessML , rdfs:Resource , p-plan:Step , opmw:WorkflowTemplateProcess ;
         p-plan:isPreceededBy   res:Pattern.Y2.ML2 , res:Pattern.Y2.ML1 ;
@@ -19819,7 +19859,7 @@ res:Custom.NT5W23QZ.d1
         rdfs:label  "NT5W23QZ Data-1" .
 
 res:StatisticalModel.GNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GNN [Graph Neural Network model]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -19901,7 +19941,7 @@ res:3YKHCDXF.ML1  rdf:type            :MachineLearningComponent , :SystemCompone
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
 res:StatisticalModel.w2v
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "w2v [Word2Vec, CBOW, skip-gram]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -20519,7 +20559,7 @@ res:Custom.HCWVZBKU.sw1
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.Hopfield_Network
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Hopfield Network" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -20712,7 +20752,7 @@ res:ICC92F7T.ML1  rdf:type            rdfs:Resource , p-plan:Step , :SystemCompo
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
 res:StatisticalModel.Regression
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Regression" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -20834,7 +20874,7 @@ res:Custom.MTW92YPA.sw1
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.t-SNE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "t-SNE" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -21198,7 +21238,7 @@ rdf:Seq  rdf:type        rdfs:Class , rdfs:Resource ;
         rdfs:subClassOf  rdfs:Container , rdf:Seq .
 
 res:StatisticalModel.DQN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DQN" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -21543,7 +21583,7 @@ res:Custom.NICVBB7G.sw1
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.RDF2vec
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RDF2Vec" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -22019,7 +22059,7 @@ prov:qualifiedRevision
         rdfs:subClassOf  :SystemMaturity , rdfs:Resource .
 
 res:StatisticalModel.PCA
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "PCA [Principal component analysis]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -22121,16 +22161,6 @@ res:Pattern.O4.Data1  rdf:type     :TemplateArtifactData ;
 res:Pattern.T9.SW2  rdf:type       :TemplateArtifactSW ;
         opmw:isGeneratedBy         res:Pattern.T9.ML1 ;
         opmw:isVariableOfTemplate  res:Pattern.T9 .
-
-_:b12   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b12 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  skos:Collection ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  skos:Concept ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 res:Custom.RGURPF6X.sw1
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
@@ -22331,7 +22361,7 @@ res:QZR5EDZW.ML2  rdf:type  p-plan:Step , :SystemComponent , rdfs:Resource , :Ma
         :componentModel  res:StatisticalModel.LDA .
 
 res:StatisticalModel.Matrix_Clusterization
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Matrix Clusterization" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -22391,7 +22421,7 @@ res:6L8ZZD85.ML1  rdf:type            :MachineLearningComponent , p-plan:Step , 
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
 res:StatisticalModel.RNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RNN [Recurrent Neural Network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -22626,14 +22656,14 @@ res:Custom.8XZS6PPX.d1
         rdfs:label  "8XZS6PPX Data-1" .
 
 res:StatisticalModel.RBM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RBM [Restricted Boltzmann machine]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
         skos:semanticRelation   res:StatisticalModel.ClassicalML .
 
 res:StatisticalModel.GAN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GAN [Generative adversarial network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -22654,7 +22684,7 @@ prov:qualifiedEnd  rdf:type        rdfs:Resource , rdf:Property , owl:ObjectProp
         prov:unqualifiedForm       prov:wasEndedBy .
 
 res:StatisticalModel.DBSCAN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DBSCAN" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -22755,14 +22785,14 @@ res:Resource.SciGraph
         :hasResourceType       res:ResourceType.Linked_Dataset .
 
 res:StatisticalModel.Translational_Distance
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Translational Distance Models" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
 
 res:StatisticalModel.ARM
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "ARM [Association Rule learning, Association Rule Mining]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -23116,14 +23146,14 @@ res:Custom.FCMS38PD.d1
         rdfs:label  "FCMS38PD Data-1" .
 
 res:StatisticalModel.LiteralE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "LiteralE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
         skos:semanticRelation   res:StatisticalModel.DeepLearning .
 
 res:StatisticalModel.KNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "k-nn [k-nearest neighbors]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -23135,7 +23165,7 @@ res:Pattern.T8  rdf:type  opmw:WorkflowTemplate , opmw:WorklowTemplate , owl:Nam
         skos:altLabel  "OB-41" .
 
 res:StatisticalModel.Asymmetrical_Embedding_Model
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Asymmetrical Embedding Model" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -23167,6 +23197,19 @@ res:247E7AB9.ML2  rdf:type            rdfs:Resource , p-plan:Step , :MachineLear
 
 owl:TransitiveProperty
         rdf:type  rdfs:Class , rdfs:Resource .
+
+_:b12   rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:subClassOf  _:b12 , rdfs:Resource ;
+        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
+                           rdf:first  prov:Activity ;
+                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                        rdf:first  prov:Agent ;
+                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
+                                                     rdf:first  prov:Entity ;
+                                                     rdf:rest   ()
+                                                   ]
+                                      ]
+                         ] .
 
 res:System_ZJKDXA43  rdf:type     prov:Plan , rdfs:Resource , p-plan:Entity , p-plan:Plan , :System , prov:Entity ;
         rdfs:label                "System ZJKDXA43" ;
@@ -23478,7 +23521,7 @@ res:DH3RQDBX.ML2  rdf:type  p-plan:Step , :SystemComponent , rdfs:Resource , :Ma
 prov:qualifiedInfluence
         rdf:type                   rdf:Property , owl:ObjectProperty , rdfs:Resource ;
         rdfs:comment               "Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable."@en ;
-        rdfs:domain                _:b10 ;
+        rdfs:domain                _:b12 ;
         rdfs:isDefinedBy           <http://www.w3.org/ns/prov-o#> ;
         rdfs:label                 "qualifiedInfluence" ;
         rdfs:range                 prov:Influence ;
@@ -23495,7 +23538,7 @@ res:Custom.GPS3JFBQ.sw2
         rdfs:label  "CustomSWR" .
 
 res:StatisticalModel.UKGE
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "UKGE" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -23507,7 +23550,7 @@ res:Pattern.T3  rdf:type  rdfs:Resource , opmw:WorkflowTemplate , opmw:WorklowTe
         skos:altLabel  "OB-16" .
 
 res:StatisticalModel.Bayesian
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Bayes [Bayes models, Bayesian network, Naive Bayes Classifier]" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -23570,7 +23613,7 @@ res:Custom.BTVG8GZL.sw2
 :I-Pattern  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Advanced pattern type: a chain of Atomic Patterns" ;
         rdfs:label       "I-Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :I-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :I-Pattern , :Pattern .
 
 res:Custom.454GV623.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
@@ -23616,7 +23659,7 @@ res:System_2CGA6RIK  rdf:type     p-plan:Entity , prov:Plan , prov:Entity , rdfs
         :hasVariableSW2           res:Resource.Open_Academic_Graph .
 
 res:StatisticalModel.DistMult
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "DistMult" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -23624,7 +23667,7 @@ res:StatisticalModel.DistMult
 
 prov:hadActivity  rdf:type         rdf:Property , rdfs:Resource , owl:ObjectProperty ;
         rdfs:comment               "The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead)."@en , "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." ;
-        rdfs:domain                prov:Influence , _:b5 ;
+        rdfs:domain                prov:Influence , _:b2 ;
         rdfs:isDefinedBy           <http://www.w3.org/ns/prov-o#> ;
         rdfs:label                 "hadActivity" ;
         rdfs:range                 prov:Activity ;
@@ -23709,16 +23752,6 @@ res:Custom.JPSJZZAU.sw2
 res:Pattern.A2.SW1  rdf:type       :TemplateArtifactData ;
         opmw:isGeneratedBy         res:Pattern.A2.ML1 ;
         opmw:isVariableOfTemplate  res:Pattern.A2 .
-
-_:b8    rdf:type         rdfs:Resource , owl:Class , rdfs:Class ;
-        rdfs:subClassOf  _:b8 , rdfs:Resource ;
-        owl:unionOf      [ rdf:type   rdf:List , rdfs:Resource ;
-                           rdf:first  opmw:WorkflowExecutionAccount ;
-                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                        rdf:first  opmw:WorkflowExecutionProcess ;
-                                        rdf:rest   ()
-                                      ]
-                         ] .
 
 res:Custom.SRKZ3BX3.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -23924,7 +23957,7 @@ res:StatisticalModel.and_ML_ad9f93f3-3040-498f-b147-f8c1893b1bfc
         :hasCompoundElement  res:StatisticalModel.Attentive_BiGRU , res:StatisticalModel.FastText .
 
 res:StatisticalModel.Plain_Encoder_based
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Plain Encoder-based Networks" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -23997,7 +24030,7 @@ res:Custom.INI3HALW.d2
         rdfs:label  "INI3HALW Data-2" .
 
 res:Resource.Wikidata
-        rdf:type               :SemanticModel , :SemanticWebResource , rdfs:Resource , owl:NamedIndividual , :Instance , :Symbol , skos:Concept , p-plan:Variable , :Model ;
+        rdf:type               :SemanticModel , :SemanticWebResource , rdfs:Resource , owl:NamedIndividual , :Instance , skos:Concept , :Symbol , p-plan:Variable , :Model ;
         rdfs:label             "Wikidata" ;
         rdfs:seeAlso           <https://www.wikidata.org/wiki/Wikidata:Main_Page> ;
         :hasResourceFormalism  res:ResourceFormalism.RDF ;
@@ -24366,13 +24399,6 @@ res:Custom.SLHWYIEJ.d1
 
 res:Pattern.F3.Data1  rdf:type     :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.F3 .
-
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or \"quoting\", some or all of it. " ;
-  owl:annotatedProperty  rdfs:subPropertyOf ;
-  owl:annotatedSource    prov:wasQuotedFrom ;
-  owl:annotatedTarget    prov:wasDerivedFrom
-] .
 
 :USA    rdf:type    rdfs:Resource , :Country , owl:NamedIndividual ;
         rdfs:label  "USA" .
@@ -24823,7 +24849,7 @@ res:Custom.K4E3DMH5.sw1
 :Y-Pattern  rdf:type     rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Advanced pattern type: combination of two (or more) Atomic Patterns via a Fusion Pattern" ;
         rdfs:label       "Y-Pattern" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :Y-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :Y-Pattern , :Pattern .
 
 res:StatisticalModel.or_ML_d44ba7e8-668f-4dcb-9fd0-d382196dbe8e
         rdf:type             :Model , rdfs:Resource , :StatisticalModel , :OrCompound ;
@@ -24933,26 +24959,6 @@ res:Custom.HKJMM2W3.sw2
 :Italy  rdf:type    rdfs:Resource , :Country , owl:NamedIndividual ;
         rdfs:label  "Italy" .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:seeAlso           "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence" ;
-  owl:annotatedProperty  rdfs:domain ;
-  owl:annotatedSource    prov:wasInfluencedBy ;
-  owl:annotatedTarget    [ rdf:type     owl:Class ;
-                           owl:unionOf  [ rdf:type   rdf:List , rdfs:Resource ;
-                                          rdf:first  prov:Activity ;
-                                          rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                       rdf:first  prov:Agent ;
-                                                       rdf:rest   [ rdf:type   rdf:List , rdfs:Resource ;
-                                                                    rdf:first  prov:Entity ;
-                                                                    rdf:rest   ()
-                                                                  ]
-                                                     ]
-                                        ]
-                         ] ;
-  prov:definition        "influencee: an identifier (o2) for an entity, activity, or agent; " ;
-  prov:dm                "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"
-] .
-
 res:Pattern.I6.SW1  rdf:type       :TemplateArtifactSW ;
         opmw:isGeneratedBy         res:Pattern.I6.ML1 ;
         opmw:isVariableOfTemplate  res:Pattern.I6 .
@@ -25054,7 +25060,7 @@ res:Task.KG_matching  rdf:type  skos:Concept , rdfs:Resource , :Task , owl:Named
         skos:semanticRelation   res:Task.Graph_Alignment .
 
 res:StatisticalModel.XLNet
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "XLNet" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -25146,7 +25152,7 @@ res:StatisticalModel.and_ML_619c0770-7152-444d-bb4e-3ee139ddd2fb
         :hasCompoundElement  res:StatisticalModel.TransX , res:StatisticalModel.Doc2Vec .
 
 res:StatisticalModel.KSR
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "KSR [Knowledge Semantic Representation]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -25275,11 +25281,6 @@ res:Resource.or_SW_990187b4-b4ab-446d-96ae-e5cb48becbfa
         rdf:type             p-plan:Variable , :Model , :SemanticWebResource , :Symbol , :OrCompound , :SemanticModel , :Instance , rdfs:Resource ;
         rdfs:label           "Compound" ;
         :hasCompoundElement  res:Resource.FB13 , res:Resource.DBLP .
-
-_:b6    rdf:type            rdfs:Class , rdfs:Resource , owl:Restriction ;
-        rdfs:subClassOf     _:b6 ;
-        owl:maxCardinality  "0"^^xsd:nonNegativeInteger ;
-        owl:onProperty      prov:hadActivity .
 
 prov:Derivation  rdf:type     owl:Class , rdfs:Resource , rdfs:Class ;
         rdfs:comment          "An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some derived prov:Entity to another prov:Entity from which it was derived. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualifiedDerivation [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ]."@en , "The more specific forms of prov:Derivation (i.e., prov:Revision, prov:Quotation, prov:PrimarySource) should be asserted if they apply."@en ;
@@ -25460,14 +25461,6 @@ opmw:   rdf:type                       owl:Ontology ;
 :Sri_Lanka  rdf:type  rdfs:Resource , :Country , owl:NamedIndividual ;
         rdfs:label  "Sri Lanka" .
 
-[ rdf:type               owl:Axiom ;
-  rdfs:comment           "Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it." ;
-  owl:annotatedProperty  rdfs:subPropertyOf ;
-  owl:annotatedSource    prov:wasAttributedTo ;
-  owl:annotatedTarget    prov:wasInfluencedBy ;
-  prov:definition        "IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. "
-] .
-
 rdfs:Literal  rdf:type   rdfs:Resource , rdfs:Class ;
         rdfs:subClassOf  rdfs:Resource .
 
@@ -25504,14 +25497,14 @@ res:Pattern.T10.Data2
         rdfs:range    :Task .
 
 res:StatisticalModel.Factorization_Machines
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Factorization Machines" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
         skos:semanticRelation   res:StatisticalModel.ClassicalML .
 
 res:StatisticalModel.Deep_Neural_Networks
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Deep Neural Networks" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -25527,7 +25520,7 @@ res:UTR7XYJ9.ML1  rdf:type            :MachineLearningComponent , p-plan:Step , 
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.Affinity_Propagation
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Affinity Propagation" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -25552,7 +25545,7 @@ res:Pattern.A3.SW1  rdf:type       :TemplateArtifactData ;
         opmw:isVariableOfTemplate  res:Pattern.A3 .
 
 res:StatisticalModel.Dimentionality_Reduction
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "Dimentionality Reduction" ;
         skos:broader            res:StatisticalModel.ClassicalML ;
         skos:broaderTransitive  res:StatisticalModel.ClassicalML ;
@@ -25787,7 +25780,7 @@ res:StatisticalModel.and_ML_2cebdd50-76a7-4cd5-8abf-26349b2395bb
         :hasCompoundElement  res:StatisticalModel.RNN , res:StatisticalModel.GCN .
 
 res:StatisticalModel.FFNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "FFNN [Feed-Forward Neural network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -25803,6 +25796,13 @@ res:Custom.5VFNXKX3.d1
 res:Custom.9R5I8TWC.d1
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
         rdfs:label  "9R5I8TWC Data-1" .
+
+[ rdf:type               owl:Axiom ;
+  rdfs:comment           "hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information." ;
+  owl:annotatedProperty  rdfs:subPropertyOf ;
+  owl:annotatedSource    prov:hadPrimarySource ;
+  owl:annotatedTarget    prov:wasDerivedFrom
+] .
 
 res:Custom.8W8C25UL.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -25977,7 +25977,7 @@ res:5QGRASGD.ML1  rdf:type            p-plan:Step , :MachineLearningComponent , 
         :hasCorrespondingPatternStep  res:Pattern.F2.ML1 .
 
 res:StatisticalModel.RDF2VecGloVe
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "RDF2VecGloVe" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -26030,7 +26030,7 @@ res:3KZNFEDR.ML1  rdf:type            :MachineLearningComponent , :SystemCompone
         :hasCorrespondingPatternStep  res:Pattern.Y2.ML1 .
 
 res:StatisticalModel.GGNN
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "GGNN [Gated Graph Neural Network]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;
@@ -26316,7 +26316,7 @@ res:Custom.FRRID3WJ.sw2
 :Other-Pattern  rdf:type  rdfs:Class , rdfs:Resource , owl:Class ;
         rdfs:comment     "Other Patterns that do not fit in any other category" ;
         rdfs:label       "Other Patterns" ;
-        rdfs:subClassOf  rdfs:Resource , opmw:WorklowTemplate , :Other-Pattern , :Pattern .
+        rdfs:subClassOf  opmw:WorklowTemplate , rdfs:Resource , :Other-Pattern , :Pattern .
 
 res:Custom.FJWPTVPL.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -26353,13 +26353,13 @@ res:DZ6A87JZ.ML1  rdf:type            p-plan:Step , :MachineLearningComponent , 
         :componentOutput              res:Custom.DZ6A87JZ.d2 ;
         :hasCorrespondingPatternStep  res:Pattern.F1.ML1 .
 
-res:Pattern.T21.ML1  rdf:type  :WorkflowTemplateProcessML , opmw:WorkflowTemplateProcess , p-plan:Step , owl:Thing , rdfs:Resource ;
-        opmw:isStepOfTemplate  res:Pattern.T21 ;
-        opmw:uses              res:Pattern.T21.Data1 .
-
 res:Custom.BE5CZA7Q.sw2
         rdf:type    :Symbol , :SemanticModel , :Model , p-plan:Variable , :Instance , rdfs:Resource , :SemanticWebResource ;
         rdfs:label  "CustomSWR" .
+
+res:Pattern.T21.ML1  rdf:type  :WorkflowTemplateProcessML , opmw:WorkflowTemplateProcess , p-plan:Step , owl:Thing , rdfs:Resource ;
+        opmw:isStepOfTemplate  res:Pattern.T21 ;
+        opmw:uses              res:Pattern.T21.Data1 .
 
 res:Custom.MJWIXKMT.d2
         rdf:type    p-plan:Variable , :Instance , rdfs:Resource , :Data ;
@@ -26396,7 +26396,7 @@ res:System_QFSK35QF  rdf:type     p-plan:Entity , prov:Entity , rdfs:Resource , 
         :hasVariableSW1           res:Resource.MeSH .
 
 res:StatisticalModel.DeepLearning
-        rdf:type    :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type    skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label  "Deep Learning model" .
 
 res:Resource.Cities  rdf:type  :SemanticWebResource , :SemanticModel , owl:NamedIndividual , :Model , :Instance , p-plan:Variable , rdfs:Resource , :Symbol ;
@@ -26422,7 +26422,7 @@ res:Custom.7ILU5KYA.d2
         rdfs:label  "7ILU5KYA Data-2" .
 
 res:StatisticalModel.LDA
-        rdf:type                :Model , skos:Concept , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
+        rdf:type                skos:Concept , :Model , rdfs:Resource , :StatisticalModel , owl:NamedIndividual ;
         rdfs:label              "LDA [Latent Dirichlet Allocation]" ;
         skos:broader            res:StatisticalModel.DeepLearning ;
         skos:broaderTransitive  res:StatisticalModel.DeepLearning ;

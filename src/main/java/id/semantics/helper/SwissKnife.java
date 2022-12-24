@@ -1,4 +1,4 @@
-package id.semantics.shacl;
+package id.semantics.helper;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.jena.ontology.OntModelSpec;
