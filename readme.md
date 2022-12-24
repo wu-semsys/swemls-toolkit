@@ -1,13 +1,14 @@
 # SWeMLS Toolkit
 
-This small app allows you to enhance and validate your SWeMLS-KG data according to workflow definitions. 
+This small app allows you to enhance and validate your SWeMLS metadata according to SWeMLS ontology and patterns. 
 More specifically, we uses the reference implementation of [SHACL Engine](https://github.com/TopQuadrant/shacl) to    
-* augment SWeMLS-KG with workflows using SHACL-AF rules.    
-* to validate instances of SWeMLS against SHACL constraints according to their pattern.
+* augment SWeMLS metadata acquired from  with workflows using SHACL-AF rules.    
+* validate instances of SWeMLS against SHACL constraints according to their pattern.
 
-Both SHACL-AF rules and SHACL constraints are available in folder (`input/shapes`).   
+The SWeMLS metadata is available in `input/swemls-instances.ttl`, which is structured according to the [SWeMLS ontology](https://w3id.org/semsys/ns/swemls/).
+Furthermore, both SHACL-AF rules and SHACL constraints are available in folder `input/shapes`, while the SWeMLS patterns are available in folder `input/patterns`.
 
-SWeMLS toolkit is part of the resources available for our ESWC 2023 submission entitled "_Describing and Organizing Semantic Web and Machine Learning Systems in the SWeMLS-KG_".
+The SWeMLS toolkit is part of the resources available for our ESWC 2023 submission entitled "_Describing and Organizing Semantic Web and Machine Learning Systems in the SWeMLS-KG_".
 
 ## Instructions
 
