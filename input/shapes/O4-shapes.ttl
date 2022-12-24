@@ -1,0 +1,213 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+# SHACL-AF rules
+
+:Pattern.O4.workflow.builder a sh:NodeShape ;
+	sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes res:prefixes ;
+		sh:select """
+			select $this 
+			where {
+				$this a :System ; :hasCorrespondingPattern res:Pattern.O4 .
+			}
+		"""
+	] ;
+	sh:rule [
+		a sh:SPARQLRule ;
+		sh:prefixes res:prefixes ;
+		sh:construct """
+			CONSTRUCT {
+				?ml1 	:hasCorrespondingPatternStep res:Pattern.O4.ML1 ;
+						:componentInput ?d1, ?sw1 ;
+						:componentOutput ?sw2 .
+				?ml2 	:hasCorrespondingPatternStep res:Pattern.O4.ML2 ;
+						:componentInput ?d1 ;
+						:componentOutput ?d2 .
+				?ml3 	:hasCorrespondingPatternStep res:Pattern.O4.ML3 ;
+						:componentInput ?sw2, ?d2;
+						:componentOutput ?d3 ;
+						p-plan:isPreceededBy ?ml1, ?ml2 .
+				?ml4 	:hasCorrespondingPatternStep res:Pattern.O4.ML4 ;
+						:componentInput ?d4;
+						:componentOutput ?d5 .
+				?ml5 	:hasCorrespondingPatternStep res:Pattern.O4.ML5 ;
+						:componentInput ?d3, ?d5;
+						:componentOutput ?d6 ;
+						p-plan:isPreceededBy ?ml3, ?ml4 .
+			}
+			WHERE {
+				$this 	:hasStepML1 ?ml1 ;
+						:hasStepML2 ?ml2 ;
+						:hasStepML3 ?ml3 ;
+						:hasStepML4 ?ml4 ;
+						:hasStepML5 ?ml5 ;
+						:hasVariableSW1 ?sw1 ;
+						:hasVariableSW2 ?sw2 ;
+						:hasVariableData1 ?d1 ;
+						:hasVariableData2 ?d2 ;
+						:hasVariableData3 ?d3 ;
+						:hasVariableData4 ?d4 ;
+						:hasVariableData5 ?d5 ;
+						:hasVariableData6 ?d6 .
+			}
+		"""
+	] ;
+.
+
+# SHACL constraints
+
+res:Pattern.O4 a sh:NodeShape ;
+ 	# sh:closed true ;
+	sh:name "Pattern O4" ;
+  	rdfs:comment "[data -> ML -> sym -> ML -> data]";
+	sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes res:prefixes ;
+		sh:select """
+			select $this 
+			where {
+				$this a :System ; :hasCorrespondingPattern res:Pattern.O4 .
+			}
+		"""
+	] ;
+	sh:property [
+		sh:path :hasSymbolIO ; 
+		sh:minCount 2; 
+		sh:maxCount 2;
+		sh:message "O1 must have exactly 2 symbol I/O" ;
+	] ;
+	sh:property [
+		sh:path :hasDataIO ; 
+		sh:minCount 6; 
+		sh:maxCount 6;
+		sh:message "O1 must have exactly 6 data I/O" ;
+	] ;
+	sh:property [
+		sh:path :hasStepML ; 
+		sh:minCount 5; 
+		sh:maxCount 5;
+		sh:message "O1 must have exactly 5 ML steps/components" ;
+	] ;
+	sh:property [
+		sh:path :hasStepML1 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 2; 
+			sh:maxCount 2;
+			sh:class :Instance ;
+			sh:message "O1.ML1 component must have exactly 2 inputs" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "O1.ML1 component must have exactly 1 output of type :Symbol" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML2 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML2 component must have exactly 1 input of type :Data" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML2 component must have exactly 1 input of type :Data" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML3 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 2; 
+			sh:maxCount 2;
+			sh:class :Instance ;
+			sh:message "O1.ML3 component must have exactly 2 inputs" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML3 component must have exactly 1 output of type :Data" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML4 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML4 component must have exactly 1 input of type :Data" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML4 component must have exactly 1 input of type :Data" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML5 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 2; 
+			sh:maxCount 2;
+			sh:class :Data ;
+			sh:message "O1.ML5 component must have exactly 2 inputs of type :Data" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "O1.ML5 component must have exactly 1 input of type :Data" ;
+		] ;
+	] ;
+.
+
+# SHACL prefixes
+
+res:prefixes
+	a owl:Ontology ;
+	owl:imports sh: ;
+	sh:declare [
+		sh:prefix "p-plan" ;
+		sh:namespace "http://purl.org/net/p-plan#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "ex" ;
+		sh:namespace "https://w3id.org/semsys/ns/p-plan-extension#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "res" ;
+		sh:namespace "http://semantic-systems.net/swemls/"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "" ;
+		sh:namespace "https://w3id.org/semsys/ns/swemls#"^^xsd:anyURI ;
+	] .

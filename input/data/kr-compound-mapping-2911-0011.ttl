@@ -1,5 +1,5 @@
-@base <https://w3id.org/semsys/ns/swemls/> .
-@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@base <http://semantic-systems.net/swemls/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
 @prefix : <https://w3id.org/semsys/ns/swemls#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .

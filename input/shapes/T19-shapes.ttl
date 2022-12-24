@@ -1,0 +1,153 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+
+# SHACL-AF rules
+
+:Pattern.T19.workflow.builder a sh:NodeShape ;
+	sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes res:prefixes ;
+		sh:select """
+			select $this 
+			where {
+				$this a :System ; :hasCorrespondingPattern res:Pattern.T19 .
+			}
+		"""
+	] ;
+	sh:rule [
+		a sh:SPARQLRule ;
+		sh:prefixes res:prefixes ;
+		sh:construct """
+			CONSTRUCT {
+				?ml1 	:hasCorrespondingPatternStep res:Pattern.T19.ML1 ;
+						:componentInput ?sw1 ;
+						:componentOutput ?sw2 .
+				?ml2 	:hasCorrespondingPatternStep res:Pattern.T19.ML2 ;
+						:componentInput ?sw2 , ?sw3 ;
+						:componentOutput ?sw4 ;
+						p-plan:isPreceededBy ?ml1 .
+			}
+			WHERE {
+				$this 	:hasStepML1 ?ml1 ;
+						:hasStepML2 ?ml2 ;
+						:hasVariableSW1 ?sw1 ;
+						:hasVariableSW2 ?sw2 ;
+						:hasVariableSW3 ?sw3 ;
+						:hasVariableSW4 ?sw4 .
+			}
+		"""
+	] ;
+.
+
+# SHACL constraints
+
+res:Pattern.T19.shape a sh:NodeShape ;
+ 	# sh:closed true ;
+	sh:name "Pattern T19" ;
+  	rdfs:comment "[data -> ML -> sym -> ML -> data]";
+	sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes res:prefixes ;
+		sh:select """
+			select $this 
+			where {
+				$this a :System ; :hasCorrespondingPattern res:Pattern.T19 .
+			}
+		"""
+	] ;
+    sh:sparql [
+		a sh:SPARQLConstraint ;   # This triple is optional
+        sh:prefixes res:prefixes ;
+        sh:message "isPreceededBy value ('{?value1}') is not the same as the value of hasStepML1 ('?value2')" ;
+        sh:select """
+            SELECT $this $value1 $value2
+            WHERE {
+                $this   :hasStepML2/p-plan:isPreceededBy ?value1 ;
+                        :hasStepML1 ?value2 .
+                FILTER (?value1 != ?value2 )
+            }
+            """ ;
+    ] ;
+	sh:property [
+		sh:path :hasSymbolIO ; 
+		sh:minCount 4; 
+		sh:maxCount 4;
+		sh:message "T19 must have exactly 4 symbol I/O" ;
+	] ;
+	sh:property [
+		sh:path :hasStepML ; 
+		sh:minCount 2; 
+		sh:maxCount 2;
+		sh:message "T19 must have exactly two ML steps/components" ;
+	] ;
+	sh:property [
+		sh:path :hasStepML1 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "T19.ML1 component must have exactly 1 input of type :Symbol" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "T19.ML1 component must have exactly one output of type :Symbol" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML2 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 2; 
+			sh:maxCount 2;
+			sh:class :Symbol ;
+			sh:message "T19.ML2 component must have exactly 2 inputs of type :Symbol" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "T19.ML2 component must have exactly one output of type :Symbol" ;
+		] ;
+	] ;
+.
+
+# SHACL prefixes
+
+res:prefixes
+	a owl:Ontology ;
+	owl:imports sh: ;
+	sh:declare [
+		sh:prefix "p-plan" ;
+		sh:namespace "http://purl.org/net/p-plan#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "ex" ;
+		sh:namespace "https://w3id.org/semsys/ns/p-plan-extension#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "res" ;
+		sh:namespace "http://semantic-systems.net/swemls/"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "" ;
+		sh:namespace "https://w3id.org/semsys/ns/swemls#"^^xsd:anyURI ;
+	] .

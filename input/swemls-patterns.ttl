@@ -1,0 +1,1284 @@
+@prefix :       <https://w3id.org/semsys/ns/swemls#> .
+@prefix opmw:   <http://www.opmw.org/ontology/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res:    <http://semantic-systems.net/swemls/> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms:  <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix xml:    <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+res:Pattern.A2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.A2 ;
+        opmw:uses              res:Pattern.A2.Data1 .
+
+res:Pattern.T6  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{data -> ML -> data / sym} -> ML -> data]" ;
+        rdfs:label     "T6" ;
+        skos:altLabel  "OB-25" .
+
+res:Pattern.T21  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym -> ML (sym) -> sym]" ;
+        rdfs:label     "T21" ;
+        skos:altLabel  "OB-28" .
+
+res:Pattern.F2.SW2  rdf:type       :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.F2.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.F2 .
+
+res:Pattern.Y4.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y4 ;
+        opmw:uses              res:Pattern.Y4.SW1 .
+
+res:Pattern.T12.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T12.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.T12 ;
+        opmw:uses              res:Pattern.T12.SW2 .
+
+res:Pattern.I5.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I5.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I5 ;
+        opmw:uses              res:Pattern.I5.SW1 .
+
+res:Pattern.F1.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.F1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.F1 .
+
+res:Pattern.T4.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T4 .
+
+res:Pattern.T17.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T17 ;
+        opmw:uses              res:Pattern.T17.Data1 , res:Pattern.T17.SW1 .
+
+res:Pattern.T5.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T5 ;
+        opmw:uses              res:Pattern.T5.Data1 .
+
+res:Pattern.T11.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T11 .
+
+res:Pattern.T1.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T1.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T1 ;
+        opmw:uses              res:Pattern.T1.Data2 , res:Pattern.T1.SW1 .
+
+res:Pattern.T18.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T18 .
+
+res:Pattern.Y1.ML3  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.Y1.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.Y1 ;
+        opmw:uses              res:Pattern.Y1.Data2 , res:Pattern.Y1.Data3 .
+
+res:Pattern.O1.Data6  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.T22.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T22.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T22 .
+
+res:Pattern.T10.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T10 .
+
+res:Pattern.I4.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I4 ;
+        opmw:uses              res:Pattern.I4.SW1 .
+
+res:Pattern.A3.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.A3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.A3 .
+
+res:Pattern.T22.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T22 .
+
+res:Pattern.T15  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> KR-> sym/sym -> ML -> sym]" ;
+        rdfs:label     "T15" ;
+        skos:altLabel  "OB-46" .
+
+res:Pattern.Y1.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y1 .
+
+res:Pattern.F2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.F2 ;
+        opmw:uses              res:Pattern.F2.SW1 , res:Pattern.F2.Data1 .
+
+res:Pattern.T15.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T15 .
+
+res:Pattern.T3.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T3 .
+
+res:Pattern.T18.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T18.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T18 ;
+        opmw:uses              res:Pattern.T18.SW2 .
+
+res:Pattern.T7.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.T14.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T14.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T14 .
+
+res:Pattern.T1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{data -> ML -> data / sym} -> ML -> sym]" ;
+        rdfs:label     "T1" ;
+        skos:altLabel  "OB-18" .
+
+res:Pattern.I1.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I1.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I1 ;
+        opmw:uses              res:Pattern.I1.SW1 .
+
+res:Pattern.O4.Data5  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O4.ML4 ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.T23.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T23.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T23 .
+
+res:Pattern.Y4.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y4.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+res:Pattern.O4.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.T8.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T8 .
+
+res:Pattern.I2.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I2.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.I2 .
+
+res:Pattern.O4.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O4 ;
+        opmw:uses              res:Pattern.O4.Data1 , res:Pattern.O4.SW1 .
+
+res:Pattern.T3.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T3 .
+
+res:Pattern.T12.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T12.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T12 .
+
+res:Pattern.I3.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I3 .
+
+res:Pattern.Y4.SW3  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+res:Pattern.O3  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML1 -> sym -> ML2 -> data -> ML1]" ;
+        rdfs:label     "O3" ;
+        skos:altLabel  "OB-22" .
+
+res:Pattern.O1.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.I6.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.I6 .
+
+res:Pattern.A1.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.A1 .
+
+res:Pattern.T11.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T11 .
+
+res:Pattern.I3  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym -> KR -> sym]" ;
+        rdfs:label     "I3" ;
+        skos:altLabel  "FvH-6/10" .
+
+res:Pattern.T5.SW3  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T5.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T5 .
+
+res:Pattern.T10  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym -> { data/sym -> KR } -> sym]" ;
+        rdfs:label     "T10" ;
+        skos:altLabel  "OB-38" .
+
+res:Pattern.I4.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I4 .
+
+res:Pattern.O1.ML3  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.O1.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.O1 ;
+        opmw:uses              res:Pattern.O1.Data5 .
+
+res:Pattern.T15.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T15 ;
+        opmw:uses              res:Pattern.T15.SW1 .
+
+res:Pattern.F3  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data/sym -> ML -> data/sym]" ;
+        rdfs:label     "F3" ;
+        skos:altLabel  "OB-1" .
+
+res:Pattern.T23.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T23 ;
+        opmw:uses              res:Pattern.T23.Data1 .
+
+res:Pattern.Y2.Data4  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y2.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y2 .
+
+res:Pattern.T4.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T4 ;
+        opmw:uses              res:Pattern.T4.SW1 .
+
+res:Pattern.T16.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T16 ;
+        opmw:uses              res:Pattern.T16.Data1 , res:Pattern.T16.SW1 .
+
+res:Pattern.T7  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{{sym/data -> ML -> data}/sym -> ML -> sym}/sym -> KR -> data]" ;
+        rdfs:label     "T7" ;
+        skos:altLabel  "OB-44" .
+
+res:Pattern.T22  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{sym->ML->data/data} -> ML -> data -> ML -> sym]" ;
+        rdfs:label     "T22" ;
+        skos:altLabel  "OB-15" .
+
+res:Pattern.I1.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I1 .
+
+res:Pattern.Y4.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y4 ;
+        opmw:uses              res:Pattern.Y4.SW3 .
+
+res:Pattern.T8.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T8.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T8 ;
+        opmw:uses              res:Pattern.T8.SW3 , res:Pattern.T8.SW2 .
+
+res:Pattern.I3.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I3.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I3 ;
+        opmw:uses              res:Pattern.I3.SW1 .
+
+res:Pattern.T21.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T21.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T21 .
+
+res:Pattern.F1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.F1 ;
+        opmw:uses              res:Pattern.F1.SW1 , res:Pattern.F1.Data1 .
+
+res:Pattern.T17.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T17.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T17 ;
+        opmw:uses              res:Pattern.T17.Data2 .
+
+res:Pattern.T4.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T4.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T4 .
+
+res:Pattern.I4.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I4.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.I4 ;
+        opmw:uses              res:Pattern.I4.Data1 .
+
+res:Pattern.T11.Data3
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T11.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T11 .
+
+res:Pattern.T18.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T18.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T18 .
+
+res:Pattern.T11.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T11.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T11 ;
+        opmw:uses              res:Pattern.T11.SW2 , res:Pattern.T11.Data2 .
+
+res:Pattern.O1.Data7  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.ML4 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.T22.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T22 .
+
+res:Pattern.T22.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T22.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.T22 .
+
+res:Pattern.T16  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{sym / data} -> ML -> data -> ML -> data]" ;
+        rdfs:label     "T16" ;
+        skos:altLabel  "OB-29" .
+
+res:Pattern.Y1.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y1.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y1 .
+
+res:Pattern.T19.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T19 .
+
+res:Pattern.T7.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T7.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.O3.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.O3 .
+
+res:Pattern.T15.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T15.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T15 .
+
+res:Pattern.T3.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T3.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T3 .
+
+res:Pattern.T7.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T7.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.I2.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.I2 .
+
+res:Pattern.T14.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T14 .
+
+res:Pattern.T2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{sym/data} -> ML -> data -> ML -> sym]" ;
+        rdfs:label     "T2" ;
+        skos:altLabel  "OB-14" .
+
+res:Pattern.O4.Data6  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O4.ML5 ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.F4.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F4 .
+
+res:Pattern.T10.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T10.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T10 .
+
+res:Pattern.Y2.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.Y2 .
+
+res:Pattern.T8.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T8.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T8 .
+
+res:Pattern.O4.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.O4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.O4.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O4 ;
+        opmw:uses              res:Pattern.O4.Data1 .
+
+res:Pattern.I7.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.I7 .
+
+res:Pattern.T3.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T3 .
+
+res:Pattern.I3.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I3.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I3 .
+
+res:Pattern.Y4.SW4  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.Y4.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+res:Pattern.T17.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T17 .
+
+res:Pattern.T21.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T21 .
+
+res:Pattern.O4  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{{data(1)/sym -> ML -> sym}/{data(1) -> ML -> data} -> ML -> data} / {data -> ML -> data} -> ML -> data]" ;
+        rdfs:label     "O4" ;
+        skos:altLabel  "OB-33" .
+
+res:Pattern.F3.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F3 .
+
+res:Pattern.T22.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T22 ;
+        opmw:uses              res:Pattern.T22.SW1 .
+
+res:Pattern.O1.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.A1.SW2  rdf:type       :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.A1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.A1 .
+
+res:Pattern.A2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.A2 .
+
+res:Pattern.T15.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T15.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.T15 ;
+        opmw:uses              res:Pattern.T15.SW2 , res:Pattern.T15.SW3 .
+
+res:Pattern.T3.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T3 ;
+        opmw:uses              res:Pattern.T3.SW1 .
+
+res:Pattern.T11.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T11.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T11 .
+
+res:Pattern.I4  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> KR -> data -> ML -> sym]" ;
+        rdfs:label     "I4" ;
+        skos:altLabel  "OB-21" .
+
+res:Pattern.T11  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym / data -> ML -> sym / data -> KR -> data]" ;
+        rdfs:label     "T11" ;
+        skos:altLabel  "OB-42" .
+
+res:Pattern.T7.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T7.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T7 ;
+        opmw:uses              res:Pattern.T7.SW3 , res:Pattern.T7.SW4 .
+
+res:Pattern.T6.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T6 .
+
+res:Pattern.O1.ML4  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.O1.ML1 , res:Pattern.O1.ML2 , res:Pattern.O1.ML3 ;
+        opmw:isStepOfTemplate  res:Pattern.O1 ;
+        opmw:uses              res:Pattern.O1.Data2 , res:Pattern.O1.Data4 , res:Pattern.O1.Data6 .
+
+res:Pattern.F4  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym/sym -> ML -> sym]" ;
+        rdfs:label     "F4" ;
+        skos:altLabel  "OB-32" .
+
+res:Pattern.T13.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T13 .
+
+res:Pattern.T20.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T20 .
+
+res:Pattern.T23.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T23.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T23 ;
+        opmw:uses              res:Pattern.T23.SW1 , res:Pattern.T23.Data1 .
+
+res:Pattern.O4.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.T8.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T8 ;
+        opmw:uses              res:Pattern.T8.SW1 .
+
+res:Pattern.T16.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T16.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T16 ;
+        opmw:uses              res:Pattern.T16.Data2 .
+
+res:Pattern.T8  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> sym / sym -> KR -> sym]" , "notes that sym(1) and sym(3) are always the same!" ;
+        rdfs:label     "T8" ;
+        skos:altLabel  "OB-41" .
+
+res:Pattern.T23  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{data/data ->ML-> sym}-> ML-> sym]" ;
+        rdfs:label     "T23" ;
+        skos:altLabel  "OB-12" .
+
+res:Pattern.T4.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T4.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T4 ;
+        opmw:uses              res:Pattern.T4.Data1 , res:Pattern.T4.Data2 .
+
+res:Pattern.I3.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I3 ;
+        opmw:uses              res:Pattern.I3.Data1 .
+
+res:Pattern.Y4.ML3  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.Y4.ML1 , res:Pattern.Y4.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.Y4 ;
+        opmw:uses              res:Pattern.Y4.Data1 , res:Pattern.Y4.SW2 .
+
+res:Pattern.T10.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T10.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T10 ;
+        opmw:uses              res:Pattern.T10.SW1 , res:Pattern.T10.SW2 , res:Pattern.T10.Data1 .
+
+res:Pattern.T2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T2 .
+
+res:Pattern.A1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.A1 ;
+        opmw:uses              res:Pattern.A1.SW1 .
+
+res:Pattern.T21.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T21 .
+
+res:Pattern.I5.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.I5 .
+
+res:Pattern.T11.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T11 ;
+        opmw:uses              res:Pattern.T11.SW1 , res:Pattern.T11.Data1 .
+
+res:Pattern.T6.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T6 .
+
+res:Pattern.O2.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.O2 .
+
+res:Pattern.Y1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{ sym>ML>data / data>ML>data } -> ML -> sym]" ;
+        rdfs:label     "Y1" ;
+        skos:altLabel  "OB-2" .
+
+res:Pattern.T22.Data3
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T22.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T22 .
+
+res:Pattern.F3.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F3 .
+
+res:Pattern.T17  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym/sym -> ML -> data -> ML -> sym]" ;
+        rdfs:label     "T17" ;
+        skos:altLabel  "OB-27" .
+
+res:Pattern.Y1.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.Y1 .
+
+res:Pattern.T19.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T19.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T19 .
+
+res:Pattern.T7.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.O3.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.O3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O3 .
+
+res:Pattern.I6.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I6.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I6 .
+
+res:Pattern.T15.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T15 .
+
+res:Pattern.T7.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T7.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.T3  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   " [{sym -> ML -> data / data} -> ML -> sym]" ;
+        rdfs:label     "T3" ;
+        skos:altLabel  "OB-16" .
+
+res:Pattern.T21.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T21 ;
+        opmw:uses              res:Pattern.T21.Data1 .
+
+res:Pattern.F4.SW2  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F4 .
+
+res:Pattern.T14.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T14 .
+
+res:Pattern.T2.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T2 .
+
+res:Pattern.T10.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T10 .
+
+res:Pattern.T8.SW3  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T8 .
+
+res:Pattern.A1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> sym]" ;
+        rdfs:label     "A1" ;
+        skos:altLabel  "FvH-3" .
+
+res:Pattern.I7.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I7.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I7 .
+
+res:Pattern.O4.ML3  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.O4.ML1 , res:Pattern.O4.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.O4 ;
+        opmw:uses              res:Pattern.O4.Data2 , res:Pattern.O4.SW2 .
+
+res:Pattern.O2.KR1  rdf:type   :WorkflowTemplateProcessKR ;
+        opmw:isStepOfTemplate  res:Pattern.O2 ;
+        opmw:uses              res:Pattern.O2.Data1 , res:Pattern.O2.SW1 .
+
+res:Pattern.T17.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T17.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T17 .
+
+res:Pattern.F3.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.F3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.F3 .
+
+res:Pattern.T22.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T22.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T22 ;
+        opmw:uses              res:Pattern.T22.Data1 , res:Pattern.T22.Data2 .
+
+res:Pattern.O1.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.T19.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T19 ;
+        opmw:uses              res:Pattern.T19.SW1 .
+
+res:Pattern.T7.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T7 ;
+        opmw:uses              res:Pattern.T7.Data1 , res:Pattern.T7.SW1 .
+
+res:Pattern.O3.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O3 ;
+        opmw:uses              res:Pattern.O3.Data1 , res:Pattern.O3.SW1 .
+
+res:Pattern.T3.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T3.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T3 ;
+        opmw:uses              res:Pattern.T3.Data1 , res:Pattern.T3.Data2 .
+
+res:Pattern.I2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I2 ;
+        opmw:uses              res:Pattern.I2.Data1 .
+
+res:Pattern.I5  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym -> ML -> data]" ;
+        rdfs:label     "I5" ;
+        skos:altLabel  "FvH-5" .
+
+res:Pattern.T12  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym/data -> KR-> sym -> ML -> sym]" ;
+        rdfs:label     "T12" ;
+        skos:altLabel  "FvH-11" .
+
+res:Pattern.T6.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T6.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T6 .
+
+res:Pattern.T13.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T13.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T13 .
+
+res:Pattern.F4.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.F4 ;
+        opmw:uses              res:Pattern.F4.SW1 , res:Pattern.F4.SW2 .
+
+res:Pattern.T20.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T20 .
+
+res:Pattern.O4.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.T10.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T10 ;
+        opmw:uses              res:Pattern.T10.SW1 .
+
+res:Pattern.Y2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y2 ;
+        opmw:uses              res:Pattern.Y2.SW1 .
+
+res:Pattern.O1.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.O1.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.I7.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I7 ;
+        opmw:uses              res:Pattern.I7.SW1 .
+
+res:Pattern.T9  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> sym / data -> KR -> data]" ;
+        rdfs:label     "T9" ;
+        skos:altLabel  "OB-34" .
+
+res:Pattern.T14.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T14 ;
+        opmw:uses              res:Pattern.T14.SW1 .
+
+res:Pattern.T2.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T2.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T2 .
+
+res:Pattern.T9.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T9 .
+
+res:Pattern.T16.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T16 .
+
+res:Pattern.T20.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T20.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T20 .
+
+res:Pattern.F2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F2 .
+
+res:Pattern.T21.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T21.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T21 .
+
+res:Pattern.I5.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I5.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.I5 .
+
+res:Pattern.O2.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.O2.ML1 , res:Pattern.O2.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O2 .
+
+res:Pattern.I5.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I5.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I5 .
+
+res:Pattern.Y2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{sym -> ML -> data / data -> ML -> data} ->ML-> data]" ;
+        rdfs:label     "Y2" ;
+        skos:altLabel  "OB-9" .
+
+res:Pattern.T5.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T5 .
+
+res:Pattern.T12.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T12 .
+
+res:Pattern.T20.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T20 ;
+        opmw:uses              res:Pattern.T20.SW1 .
+
+res:Pattern.A3.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.A3 .
+
+res:Pattern.F3.SW2  rdf:type       :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.F3.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.F3 .
+
+res:Pattern.T13.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T13 .
+
+res:Pattern.T1.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T1 .
+
+res:Pattern.T18  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym/ sym -> ML -> data]" ;
+        rdfs:label     "T18" ;
+        skos:altLabel  "OB-37" .
+
+res:Pattern.Y1.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.Y1.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y1 .
+
+res:Pattern.O3.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O3.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.O3 .
+
+res:Pattern.T19.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T19 .
+
+res:Pattern.T7.SW3  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T7.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.I6.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I6.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.I6 .
+
+res:Pattern.T15.SW4  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T15.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T15 .
+
+res:Pattern.O1.KR1  rdf:type   :WorkflowTemplateProcessKR ;
+        p-plan:isPreceededBy   res:Pattern.O1.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.O1 ;
+        opmw:uses              res:Pattern.O1.Data1 , res:Pattern.O1.SW1 , res:Pattern.O1.SW2 .
+
+res:Pattern.Y2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.Y2 .
+
+res:Pattern.T4  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   " [{sym -> ML -> data / data} -> ML -> data]" ;
+        rdfs:label     "T4" ;
+        skos:altLabel  "OB-17" .
+
+res:Pattern.T1.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T1 .
+
+res:Pattern.T18.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T18 .
+
+res:Pattern.T21.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T21.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T21 ;
+        opmw:uses              res:Pattern.T21.SW1 , res:Pattern.T21.SW2 .
+
+res:Pattern.T6.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T6 ;
+        opmw:uses              res:Pattern.T6.Data1 .
+
+res:Pattern.T14.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T14.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T14 .
+
+res:Pattern.O2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O2 ;
+        opmw:uses              res:Pattern.O2.Data1 .
+
+res:Pattern.F4.SW3  rdf:type       :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.F4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.F4 .
+
+res:Pattern.T2.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T2.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T2 .
+
+res:Pattern.I1.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.I1 .
+
+res:Pattern.T10.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T10.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T10 .
+
+res:Pattern.I4.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I4.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I4 .
+
+res:Pattern.T8.SW4  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T8.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T8 .
+
+res:Pattern.A2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym]" ;
+        rdfs:label     "A2" ;
+        skos:altLabel  "FvH-5" .
+
+res:Pattern.O4.ML4  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O4 ;
+        opmw:uses              res:Pattern.O4.Data4 .
+
+res:Pattern.T17.Data3
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T17.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T17 .
+
+res:Pattern.F3.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.F3 ;
+        opmw:uses              res:Pattern.F3.SW1 , res:Pattern.F3.Data1 .
+
+res:Pattern.Y1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y1 ;
+        opmw:uses              res:Pattern.Y1.SW1 .
+
+res:Pattern.T22.ML3  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T22.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.T22 ;
+        opmw:uses              res:Pattern.T22.Data3 .
+
+res:Pattern.O1.Data4  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.T19.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T19.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T19 ;
+        opmw:uses              res:Pattern.T19.SW2 , res:Pattern.T19.SW3 .
+
+res:Pattern.T7.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T7 ;
+        opmw:uses              res:Pattern.T7.Data2 , res:Pattern.T7.SW2 .
+
+res:Pattern.O3.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O3 ;
+        opmw:uses              res:Pattern.O3.SW2 .
+
+res:Pattern.I6.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I6 ;
+        opmw:uses              res:Pattern.I6.Data1 .
+
+res:Pattern.T13.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T13 ;
+        opmw:uses              res:Pattern.T13.Data1 , res:Pattern.T13.SW1 .
+
+res:Pattern.I2.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I2.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I2 ;
+        opmw:uses              res:Pattern.I2.SW1 .
+
+res:Pattern.I6  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> ML -> sym -> ML -> sym]" ;
+        rdfs:label     "I6" ;
+        skos:altLabel  "OB-10" .
+
+res:Pattern.T13  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym/data -> KR-> data -> ML -> data]" ;
+        rdfs:label     "T13" ;
+        skos:altLabel  "OB-45" .
+
+res:Pattern.T6.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T6.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T6 .
+
+res:Pattern.T13.Data3
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T13.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T13 .
+
+res:Pattern.T9.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T9 .
+
+res:Pattern.T14.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T14.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.T14 ;
+        opmw:uses              res:Pattern.T14.Data1 , res:Pattern.T14.Data2 .
+
+res:Pattern.T2.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T2 ;
+        opmw:uses              res:Pattern.T2.Data1 , res:Pattern.T2.SW1 .
+
+res:Pattern.T20.SW3  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T20.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T20 .
+
+res:Pattern.O4.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O4.ML3 ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.Y2.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y2 ;
+        opmw:uses              res:Pattern.Y2.Data1 .
+
+res:Pattern.O1.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.I7.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I7.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I7 ;
+        opmw:uses              res:Pattern.I7.SW2 .
+
+res:Pattern.T9.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T9.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T9 .
+
+res:Pattern.T16.Data2
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T16.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T16 .
+
+res:Pattern.A2.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.A2.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.A2 .
+
+res:Pattern.Y4.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+res:Pattern.T12.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T12 .
+
+res:Pattern.O1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{data -> ML -> data / data -> ML -> data / data/sym/sym -> KR -> data -> ML -> data } -> ML -> data]" ;
+        rdfs:label     "O1" ;
+        skos:altLabel  "OB-43" .
+
+res:Pattern.I1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> data -> ML -> sym]" ;
+        rdfs:label     "I1" ;
+        skos:altLabel  "FvH-4" .
+
+res:Pattern.T20.ML2  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T20.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T20 ;
+        opmw:uses              res:Pattern.T20.SW2 , res:Pattern.T20.Data1 .
+
+res:Pattern.T17.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T17 .
+
+res:Pattern.T5.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T5.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T5 .
+
+res:Pattern.F1  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data/sym -> ML -> data]" ;
+        rdfs:label     "F1" ;
+        skos:altLabel  "FvH-12" .
+
+res:Pattern.O1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O1 ;
+        opmw:uses              res:Pattern.O1.Data1 .
+
+res:Pattern.T23.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T23 .
+
+res:Pattern.T1.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T1.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T1 .
+
+res:Pattern.T19  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{sym -> ML -> sym/sym} -> ML -> sym]" ;
+        rdfs:label     "T19" ;
+        skos:altLabel  "OB-6" .
+
+res:Pattern.T9.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T9.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T9 ;
+        opmw:uses              res:Pattern.T9.Data1 , res:Pattern.T9.SW2 .
+
+res:Pattern.T19.SW4  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T19.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T19 .
+
+res:Pattern.T7.SW4  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T7 .
+
+res:Pattern.Y2.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y2.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y2 .
+
+res:Pattern.T1.Data2  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T1.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T1 .
+
+res:Pattern.T5  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{data -> ML -> sym/sym} -> KR -> sym]" ;
+        rdfs:label     "T5" ;
+        skos:altLabel  "FvH-7" .
+
+res:Pattern.T20  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{ sym->ML->data / sym } -> ML -> sym]" ;
+        rdfs:label     "T20" ;
+        skos:altLabel  "OB-13" .
+
+res:Pattern.F2.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F2 .
+
+res:Pattern.T18.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T18.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T18 .
+
+res:Pattern.T6.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T6.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T6 ;
+        opmw:uses              res:Pattern.T6.SW1 , res:Pattern.T6.Data2 .
+
+res:Pattern.I5.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I5 ;
+        opmw:uses              res:Pattern.I5.Data1 .
+
+res:Pattern.F1.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F1 .
+
+res:Pattern.I1.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.I1.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.I1 .
+
+res:Pattern.T12.KR1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T12 ;
+        opmw:uses              res:Pattern.T12.Data1 , res:Pattern.T12.SW1 .
+
+res:Pattern.A3  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> data]" ;
+        rdfs:label     "A3" ;
+        skos:altLabel  "OB-7" .
+
+res:Pattern.O4.ML5  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.O4.ML4 , res:Pattern.O4.ML3 ;
+        opmw:isStepOfTemplate  res:Pattern.O4 ;
+        opmw:uses              res:Pattern.O4.Data3 , res:Pattern.O4.Data5 .
+
+res:Pattern.T4.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T4 .
+
+res:Pattern.A3.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.A3 ;
+        opmw:uses              res:Pattern.A3.SW1 .
+
+res:Pattern.T1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T1 ;
+        opmw:uses              res:Pattern.T1.Data1 .
+
+res:Pattern.T13.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T13.KR1 ;
+        opmw:isStepOfTemplate  res:Pattern.T13 ;
+        opmw:uses              res:Pattern.T13.Data2 .
+
+res:Pattern.T11.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T11 .
+
+res:Pattern.Y1.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.Y1 ;
+        opmw:uses              res:Pattern.Y1.Data1 .
+
+res:Pattern.O1.Data5  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.O1.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.O1 .
+
+res:Pattern.T5.KR1  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T5.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T5 ;
+        opmw:uses              res:Pattern.T5.SW1 , res:Pattern.T5.SW2 .
+
+res:Pattern.I6.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.I6.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.I6 ;
+        opmw:uses              res:Pattern.I6.SW1 .
+
+res:Pattern.T10.Data1
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.T10 .
+
+res:Pattern.O2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O2 .
+
+res:Pattern.I7.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I7.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.I7 .
+
+res:Pattern.I7  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> sym -> ML -> data]" ;
+        rdfs:label     "I7" ;
+        skos:altLabel  "OB-10" .
+
+res:Pattern.T14  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> KR-> data/data -> ML -> data]" ;
+        rdfs:label     "T14" ;
+        skos:altLabel  "OB-19" .
+
+res:Pattern.Y1.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.Y1 .
+
+res:Pattern.T18.ML1  rdf:type  :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T18 ;
+        opmw:uses              res:Pattern.T18.Data1 , res:Pattern.T18.SW1 .
+
+res:Pattern.T2.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.T2.ML1 ;
+        opmw:isStepOfTemplate  res:Pattern.T2 ;
+        opmw:uses              res:Pattern.T2.Data2 .
+
+res:Pattern.T9.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T9.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T9 .
+
+res:Pattern.Y2.ML3  rdf:type   :WorkflowTemplateProcessML ;
+        p-plan:isPreceededBy   res:Pattern.Y2.ML1 , res:Pattern.Y2.ML2 ;
+        opmw:isStepOfTemplate  res:Pattern.Y2 ;
+        opmw:uses              res:Pattern.Y2.Data2 , res:Pattern.Y2.Data3 .
+
+res:Pattern.I1.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.I1 ;
+        opmw:uses              res:Pattern.I1.Data1 .
+
+res:Pattern.O4.Data4  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.O4 .
+
+res:Pattern.I3.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.I3 .
+
+res:Pattern.T23.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T23.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T23 .
+
+res:Pattern.I2.Data1  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.I2.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.I2 .
+
+res:Pattern.T16.Data3
+        rdf:type                   :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.T16.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.T16 .
+
+res:Pattern.T16.SW1  rdf:type      :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T16 .
+
+res:Pattern.T4.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T4 .
+
+res:Pattern.T12.SW2  rdf:type      :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.T12.KR1 ;
+        opmw:isVariableOfTemplate  res:Pattern.T12 .
+
+res:Pattern.Y4.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isGeneratedBy         res:Pattern.Y4.ML1 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y4 .
+
+res:Pattern.O2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data -> {ML / (sym->KR)} -> sym]" ;
+        rdfs:label     "O2" ;
+        skos:altLabel  "OB-26" .
+
+res:Pattern.Y4  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[{ sym>ML>sym / sym>ML>data } -> ML -> sym]" ;
+        rdfs:label     "Y4" ;
+        skos:altLabel  "OB-36" .
+
+res:Pattern.F1.SW1  rdf:type       :TemplateArtifactData ;
+        opmw:isVariableOfTemplate  res:Pattern.F1 .
+
+res:Pattern.I2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[sym -> ML -> data -> ML -> data]" ;
+        rdfs:label     "I2" ;
+        skos:altLabel  "OB-5" .
+
+res:Pattern.T9.ML1  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.T9 ;
+        opmw:uses              res:Pattern.T9.SW1 .
+
+res:Pattern.T5.SW2  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.T5 .
+
+res:Pattern.O1.ML2  rdf:type   :WorkflowTemplateProcessML ;
+        opmw:isStepOfTemplate  res:Pattern.O1 ;
+        opmw:uses              res:Pattern.O1.Data3 .
+
+res:Pattern.I4.SW1  rdf:type       :TemplateArtifactSW ;
+        opmw:isVariableOfTemplate  res:Pattern.I4 .
+
+res:Pattern.F2  rdf:type  opmw:WorkflowTemplate ;
+        rdfs:comment   "[data/sym -> ML -> sym]" ;
+        rdfs:label     "F2" ;
+        skos:altLabel  "OB-8" .
+
+res:Pattern.Y2.Data3  rdf:type     :TemplateArtifactData ;
+        opmw:isGeneratedBy         res:Pattern.Y2.ML2 ;
+        opmw:isVariableOfTemplate  res:Pattern.Y2 .

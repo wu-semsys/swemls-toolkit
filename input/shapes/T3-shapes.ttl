@@ -69,6 +69,19 @@ res:Pattern.T3.shape a sh:NodeShape ;
 			}
 		"""
 	] ;
+    sh:sparql [
+		a sh:SPARQLConstraint ;   # This triple is optional
+        sh:prefixes res:prefixes ;
+        sh:message "isPreceededBy value ('{?value1}') is not the same as the value of hasStepML1 ('?value2')" ;
+        sh:select """
+            SELECT $this $value1 $value2
+            WHERE {
+                $this   :hasStepML2/p-plan:isPreceededBy ?value1 ;
+                        :hasStepML1 ?value2 .
+                FILTER (?value1 != ?value2 )
+            }
+            """ ;
+    ] ;
 	sh:property [
 		sh:path :hasDataIO ; 
 		sh:minCount 2; 
@@ -87,19 +100,40 @@ res:Pattern.T3.shape a sh:NodeShape ;
 		sh:maxCount 2;
 		sh:message "T3 must have exactly two ML steps/components" ;
 	] ;
-    sh:sparql [
-		a sh:SPARQLConstraint ;   # This triple is optional
-        sh:prefixes res:prefixes ;
-        sh:message "isPreceededBy value ('{?value1}') is not the same as the value of hasStepML1 ('?value2')" ;
-        sh:select """
-            SELECT $this $value1 $value2
-            WHERE {
-                $this   :hasStepML2/p-plan:isPreceededBy ?value1 ;
-                        :hasStepML1 ?value2 .
-                FILTER (?value1 != ?value2 )
-            }
-            """ ;
-    ] ;
+	sh:property [
+		sh:path :hasStepML1 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "T3.ML1 component must have exactly one input of type :Symbol" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Data ;
+			sh:message "T3.ML1 component must have exactly one output of type :Data" ;
+		] ;
+	] ;
+	sh:property [
+		sh:path :hasStepML2 ; 
+		sh:property [
+			sh:path :componentInput ; 
+			sh:minCount 2; 
+			sh:maxCount 2;
+			sh:class :Data ;
+			sh:message "T3.ML2 component must have exactly two inputs of type :Data" ;
+		] ;
+		sh:property [
+			sh:path :componentOutput ; 
+			sh:minCount 1; 
+			sh:maxCount 1;
+			sh:class :Symbol ;
+			sh:message "T3.ML2 component must have exactly one output of type :Symbol" ;
+		] ;
+	] ;
 .
 
 # SHACL prefixes

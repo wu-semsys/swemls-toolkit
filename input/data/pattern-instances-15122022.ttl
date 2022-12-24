@@ -1,5 +1,5 @@
-@base <https://w3id.org/semsys/ns/swemls/> .
-@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@base <http://semantic-systems.net/swemls/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
 @prefix : <https://w3id.org/semsys/ns/swemls#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -339,8 +339,7 @@ res:System_33YAWNTG a :System;
   rdfs:label "System 33YAWNTG";
   :hasVariableSW1 res:Custom.33YAWNTG.sw1;
   :hasVariableSW2 res:Custom.33YAWNTG.sw2;
-  :hasVariableData1 res:Custom.33YAWNTG.d1;
-  :hasVariableData2 res:Custom.33YAWNTG.d2 .
+  :hasVariableData1 res:Custom.33YAWNTG.d1 .
 
 res:33YAWNTG.ML1 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.CNN;
@@ -1050,8 +1049,7 @@ res:System_4YDDUZZC a :System;
   :hasVariableData4 res:Custom.4YDDUZZC.d4;
   :hasVariableData5 res:Custom.4YDDUZZC.d5;
   :hasVariableData6 res:Custom.4YDDUZZC.d6;
-  :hasVariableData7 res:Custom.4YDDUZZC.d7;
-  :hasVariableData8 res:Custom.4YDDUZZC.d8 .
+  :hasVariableData7 res:Custom.4YDDUZZC.d7 .
 
 res:4YDDUZZC.ML1 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.and_ML_04de9d96-6c5f-42aa-8136-4943090db83f;
@@ -2843,12 +2841,13 @@ res:System_8W8C25UL a :System;
   :hasStepML1 res:8W8C25UL.ML1;
   :hasStepML2 res:8W8C25UL.ML2;
   :hasStepML3 res:8W8C25UL.ML3;
-  :hasStepML4 res:8W8C25UL.ML4;
+  # :hasStepML4 res:8W8C25UL.ML4;
   :hasCorrespondingPattern res:Pattern.Y1;
   rdfs:label "System 8W8C25UL";
-  :hasVariableSW1 res:Resource.ChEBI;
-  :hasVariableSW2 res:Resource.WordNet;
-  :hasVariableSW3 res:Custom.8W8C25UL.sw3;
+  # :hasVariableSW1 res:Resource.ChEBI;
+  # :hasVariableSW2 res:Resource.WordNet;
+  :hasVariableSW1 res:Resource.and_SW_ChEBI_WordNet ;
+  :hasVariableSW2 res:Custom.8W8C25UL.sw3;
   :hasVariableData1 res:Custom.8W8C25UL.d1;
   :hasVariableData2 res:Custom.8W8C25UL.d2;
   :hasVariableData3 res:Custom.8W8C25UL.d3 .
@@ -2861,13 +2860,13 @@ res:8W8C25UL.ML2 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.and_ML_31b93c7b-2836-49be-89d3-bddce90f113c;
   rdfs:label "8W8C25UL-ML2 (Compound)" .
 
-res:8W8C25UL.ML3 a :MachineLearningComponent;
-  :componentModel res:StatisticalModel.and_ML_31b93c7b-2836-49be-89d3-bddce90f113c;
-  rdfs:label "8W8C25UL-ML3 (Compound)" .
+# res:8W8C25UL.ML3 a :MachineLearningComponent;
+#   :componentModel res:StatisticalModel.and_ML_31b93c7b-2836-49be-89d3-bddce90f113c;
+#   rdfs:label "8W8C25UL-ML3 (Compound)" .
 
-res:8W8C25UL.ML4 a :MachineLearningComponent;
+res:8W8C25UL.ML3 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.FFNN;
-  rdfs:label "8W8C25UL-ML4 (FFNN)" .
+  rdfs:label "8W8C25UL-ML3 (FFNN)" .
 
 res:Resource.ChEBI a :SemanticWebResource;
   rdfs:label "ChEBI" .
@@ -3245,8 +3244,8 @@ res:System_9W29Y9VW a :System;
   :hasStepML1 res:9W29Y9VW.ML1;
   :hasCorrespondingPattern res:Pattern.T8;
   rdfs:label "System 9W29Y9VW";
-  :hasVariableSW1 res:Custom.9W29Y9VW.sw1;
-  :hasVariableSW2 res:Resource.DBpedia;
+  :hasVariableSW1 res:Resource.DBpedia;
+  :hasVariableSW2 res:Custom.9W29Y9VW.sw2;
   :hasVariableSW3 res:Resource.DBpedia;
   :hasVariableSW4 res:Custom.9W29Y9VW.sw4;
   :hasStepKR1 res:9W29Y9VW.KR1 .
@@ -6126,8 +6125,7 @@ res:System_HLW6A8AW a :System;
   rdfs:label "System HLW6A8AW";
   :hasVariableSW1 res:Custom.HLW6A8AW.sw1;
   :hasVariableSW2 res:Custom.HLW6A8AW.sw2;
-  :hasVariableData1 res:Custom.HLW6A8AW.d1;
-  :hasVariableData2 res:Custom.HLW6A8AW.d2 .
+  :hasVariableData1 res:Custom.HLW6A8AW.d1 .
 
 res:HLW6A8AW.ML1 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.ARM;
@@ -6185,8 +6183,7 @@ res:System_HUS3CVRH a :System;
   :hasVariableData3 res:Custom.HUS3CVRH.d3;
   :hasVariableData4 res:Custom.HUS3CVRH.d4;
   :hasVariableData5 res:Custom.HUS3CVRH.d5;
-  :hasVariableData6 res:Custom.HUS3CVRH.d6;
-  :hasVariableData7 res:Custom.HUS3CVRH.d7 .
+  :hasVariableData6 res:Custom.HUS3CVRH.d6 .
 
 res:HUS3CVRH.ML1 a :MachineLearningComponent;
   :componentModel res:StatisticalModel.w2v;

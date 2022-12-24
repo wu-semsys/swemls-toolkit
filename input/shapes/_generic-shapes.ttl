@@ -1,0 +1,56 @@
+@prefix : <https://w3id.org/semsys/ns/swemls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@base <https://w3id.org/semsys/ns/swemls> .
+
+
+
+# SHACL constraints
+
+res:Pattern.T3.shape a sh:NodeShape ;
+ 	# sh:closed true ;
+	sh:name "SWeMLS validation constraints" ;
+	sh:targetClass :System ;
+	sh:property [
+		sh:path :hasSymbolIO ; 
+		sh:minCount 1;
+		sh:message "A SWeML system must have at least one symbol I/O" ;
+	] ;
+	sh:property [
+		sh:path :hasStepML ; 
+		sh:minCount 1; 
+		sh:message "A SWeML system must have at least one ML steps/components" ;
+	] ;
+.
+
+# SHACL prefixes
+
+res:prefixes
+	a owl:Ontology ;
+	owl:imports sh: ;
+	sh:declare [
+		sh:prefix "p-plan" ;
+		sh:namespace "http://purl.org/net/p-plan#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "ex" ;
+		sh:namespace "https://w3id.org/semsys/ns/p-plan-extension#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "res" ;
+		sh:namespace "http://semantic-systems.net/swemls/"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "" ;
+		sh:namespace "https://w3id.org/semsys/ns/swemls#"^^xsd:anyURI ;
+	] .

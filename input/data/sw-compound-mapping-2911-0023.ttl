@@ -1,5 +1,5 @@
-@base <https://w3id.org/semsys/ns/swemls/> .
-@prefix res: <https://w3id.org/semsys/ns/swemls/> .
+@base <http://semantic-systems.net/swemls/> .
+@prefix res: <http://semantic-systems.net/swemls/> .
 @prefix : <https://w3id.org/semsys/ns/swemls#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -577,3 +577,7 @@ res:Resource.or_SW_d0bade88-f7ef-46d3-ada2-bd36c42a1f49 a :SemanticWebResource, 
 res:Resource.DB111K_174 a :SemanticWebResource .
 
 res:Resource.YAGO26K_906 a :SemanticWebResource .
+
+## manually added
+res:Resource.and_SW_ChEBI_WordNet a :SemanticWebResource, :OrCompound;
+  :hasCompoundElement res:ChEBI , res:WordNet .
