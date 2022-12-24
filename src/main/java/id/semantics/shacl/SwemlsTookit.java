@@ -18,50 +18,33 @@ public class SwemlsTookit {
     public static void main(String[] args) throws FileNotFoundException {
 
         String ontologyFile = "https://w3id.org/semsys/ns/swemls/ontology.ttl";
-        String outputFolder = "output/";
+        
         String inputFolder = "input/";
+        String inputPatterns = inputFolder + "swemls-patterns.ttl";
+        String inputShapes = inputFolder + "swemls-shapes.ttl";
+        String inputInstances = inputFolder + "swemls-sms-metadata.ttl";
 
-        String patternsFolder = inputFolder + "patterns/";
-        String shapesFolder = inputFolder + "shapes/";
-        String dataFolder = inputFolder + "data/";
-
-        String inputInstances = dataFolder + "pattern-instances-15122022.ttl";
-        String inputSWCompounds = dataFolder + "sw-compound-mapping-2911-0023.ttl";
-        String inputMLCompounds = dataFolder + "ml-compound-mapping-2911-0011.ttl";
-        String inputKRCompounds = dataFolder + "kr-compound-mapping-2911-0011.ttl";
-
-        String combinedInstancesOutput = outputFolder + "swemls-sms-metadata.ttl";
-        String inferredInstancesOutput = outputFolder + "generated-statements.ttl";
-        String shapesOutput = outputFolder + "swemls-shapes.ttl";
-        String enhancementOutput = outputFolder + "enrichments-results.ttl";
-        String swemlsKGOutput = outputFolder + "SWeMLS-KG.ttl";
-
-        String validationReport = outputFolder + "validation-reports.ttl";
+        String outputFolder = "output/";
+        String outputEnhancements = outputFolder + "enrichments-results.ttl";
+        String outputSwemlsKG = outputFolder + "SWeMLS-KG.ttl";
+        String outputValidationReport = outputFolder + "validation-reports.ttl";
 
         // load SHACL constraints for patterns
-        Model shapesGraph = SwissKnife.initAndLoadModelFromFilesInFolder(shapesFolder, Lang.TURTLE);
-        RDFDataMgr.write(new FileOutputStream(shapesOutput), shapesGraph, Lang.TURTLE);
+        Model shapesGraph = SwissKnife.initAndLoadModelFromResource(inputShapes, Lang.TURTLE);
 
         // load data & ontology
         Model ontoGraph = SwissKnife.initAndLoadModelFromURL(ontologyFile, Lang.TURTLE);
         Model dataGraph = SwissKnife.initAndLoadModelFromResource(inputInstances, Lang.TURTLE);
 
-        // add all compound files to datagraph
-        dataGraph.add(SwissKnife.initAndLoadModelFromResource(inputSWCompounds, Lang.TURTLE));
-        dataGraph.add(SwissKnife.initAndLoadModelFromResource(inputKRCompounds, Lang.TURTLE));
-        dataGraph.add(SwissKnife.initAndLoadModelFromResource(inputMLCompounds, Lang.TURTLE));
-        RDFDataMgr.write(new FileOutputStream(combinedInstancesOutput), dataGraph, Lang.TURTLE);
-
-        // initialise inference graphs for validation
+        // initialise inference graphs for rule generation and validation
         Model inferenceGraph = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM_RDFS_INF);
         inferenceGraph.add(ontoGraph);
         inferenceGraph.add(dataGraph);
         inferenceGraph.setNsPrefixes(ontoGraph.getNsPrefixMap());
-        RDFDataMgr.write(new FileOutputStream(inferredInstancesOutput), inferenceGraph, Lang.TURTLE);
 
         // executing SHACL-AF rules for generating workflow and write the results to an output file
         Model ruleResults = RuleUtil.executeRules(inferenceGraph, shapesGraph, inferenceGraph, null);
-        RDFDataMgr.write(new FileOutputStream(enhancementOutput), ruleResults, Lang.TURTLE);
+        RDFDataMgr.write(new FileOutputStream(outputEnhancements), ruleResults, Lang.TURTLE);
 
         // execute SHACL constraints on dataGraphs
         Resource validationResult = ValidationUtil.validateModel(inferenceGraph, shapesGraph, false);
@@ -72,12 +55,12 @@ public class SwemlsTookit {
 
         // check if the validation successful
         if (shaclValidationReport.containsLiteral(null, SH.conforms, false)) {
-            System.out.println("Validation Failed! See validation results at " + validationReport);
+            System.out.println("Validation Failed! See validation results at " + outputValidationReport);
 
         // generate final knowledge graphs
         } else {
             // load all paterns (and write it to a separate file)
-            Model patternGraph = SwissKnife.initAndLoadModelFromFilesInFolder(patternsFolder, Lang.TURTLE);
+            Model patternGraph = SwissKnife.initAndLoadModelFromResource(inputPatterns, Lang.TURTLE);
 
             // create an integrated KG
             Model finalKG = ModelFactory.createDefaultModel();
@@ -85,17 +68,12 @@ public class SwemlsTookit {
             finalKG.add(ruleResults);
             finalKG.add(patternGraph);
 
-            // add all compound files
-            finalKG.add(SwissKnife.initAndLoadModelFromResource(inputSWCompounds, Lang.TURTLE));
-            finalKG.add(SwissKnife.initAndLoadModelFromResource(inputKRCompounds, Lang.TURTLE));
-            finalKG.add(SwissKnife.initAndLoadModelFromResource(inputMLCompounds, Lang.TURTLE));
-
             // save to file
-            RDFDataMgr.write(new FileOutputStream(swemlsKGOutput), finalKG, Lang.TURTLE);
+            RDFDataMgr.write(new FileOutputStream(outputSwemlsKG), finalKG, Lang.TURTLE);
 
-            System.out.println("Validation Successful! See completed KG at " + swemlsKGOutput);
+            System.out.println("Validation Successful! See completed KG at " + outputSwemlsKG);
         }
 
-        RDFDataMgr.write(new FileOutputStream(validationReport), shaclValidationReport, Lang.TURTLE);
+        RDFDataMgr.write(new FileOutputStream(outputValidationReport), shaclValidationReport, Lang.TURTLE);
     }
 }
